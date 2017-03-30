@@ -13,24 +13,22 @@
         clear: both;
     }
 
-    .related-post {
-        break-inside: avoid;
-        margin: 0 0 1em;
-        float: left;
-        width: 100%;
-
+    .column {
         @include media-query(s) {
-            width: calc(50% - 0.5em);
+            column-count: 2;
+            column-gap: 1em;
         }
 
         @include media-query(l) {
-            width: calc(50% - 0.5em);
+            column-count: 2;
+            column-gap: 1em;
         }
 
-        &:nth-child(odd) {
-            float: right;
-            clear: right;
-        }
+    }
+
+    .related-post {
+        break-inside: avoid;
+        margin: 0 0 1em;
 
         h2 {
             margin-top: 0;
