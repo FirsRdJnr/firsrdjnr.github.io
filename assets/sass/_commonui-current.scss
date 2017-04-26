@@ -1,0 +1,753 @@
+.popout-common-ui {
+    overflow:hidden;
+    height:110px;
+    background-color: #640912;
+    background-image: -moz-linear-gradient(top, #640912 0%, #85020c 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #640912), color-stop(100%, #85020c));
+    background-image: -webkit-linear-gradient(top, #640912 0%, #85020c 100%);
+    background-image: -o-linear-gradient(top, #640912 0%, #85020c 100%);
+    background-image: -ms-linear-gradient(top, #640912 0%, #85020c 100%);
+    background-image: linear-gradient(to bottom, #640912 0%, #85020c 100%);
+    .account-bar {
+        font-size: 14px;
+        height: 4.5em;
+    }
+    .account-bar__left {
+        margin: 0;
+        margin-left:20px;
+        @include media-query(xs-s) {
+            margin-left:10px;
+        }
+        margin-right:20px;
+        width:auto;
+        .account-bar__left-inner {
+            margin:0;
+            height: 4.5em;
+        }
+        .account-bar__brand-logo {
+            line-height: 4.5em;
+            height: 34px;
+        }
+    }
+    .account-bar__right {
+        margin:0;
+        width: auto;
+        .account-bar__link-button {
+            padding: 0 10px;
+            line-height: 4.5em;
+        }
+        .account-bar__right-inner {
+            margin:0;
+            .account-bar__links-wrap {
+                padding-right:0;
+            }
+            .icon {
+                margin-right:5px;
+            }
+        }
+    }
+}
+
+.common-ui__top-bar {
+    margin: 0 0 $half-spacing-unit 0;
+    @include font-size(14px);
+    font-family: SkyMedium;
+
+    .common-ui__options {
+        background: #330104;
+        border: 2px solid #3f090e;
+        border-radius: 4px;
+        @include font-size(12px);
+    }
+}
+.common-ui__account-bar {
+    width: 100%;
+    .common-ui__accountitem  {
+        display: inline-block;
+        margin:0 20px;
+        @media (max-width:740px) {
+            margin: 0 20px 0 10px;
+        }
+        line-height:46px;
+        font-size: 15px;
+        font-family: SkyMedium;
+    }
+    .btn {
+        padding: 0 40px 0 40px;
+        line-height: 39px;
+        float: right;
+        margin: 4px 0!important;
+    }
+}
+
+
+
+
+
+.embedded-common-ui {
+    margin-top:-5px;
+    width:100%;
+    height: 60px;
+    background: #71020e;
+    display:inline-block;
+    padding: 10px 5px 10px 5px;
+    font-family: SkyMedium;
+    line-height:18px;
+    .common-ui__option {
+        padding: 10px;
+        border-right:1px solid #9c070a;
+        cursor: pointer;
+        float:left;
+        font-family: SkyMedium;
+        &:last-child {
+            border-right:none;
+        }
+    }
+    .common-ui__accountitem  {
+        padding:10px;
+        border-right: 1px solid #9c070a;
+        font-family: SkyMedium;
+        float:left;
+    }
+}
+
+
+
+/* MOBILE COMMON UI */
+
+/* COMMON - DEFAULT TO PORTRAIT MOBILE AND UP */
+.common-ui__settings-bar {
+    background: #480107;
+    font-family: 'Arial', sans-serif;
+}
+.common-ui__setting-bar--first {
+    width: 100%;
+    border: none;
+}
+.common-ui__setting-bar--second {
+    display:none;
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+}
+.common-ui__settings-bar--item {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    font-size: 12.5px;
+    font-size:0.8rem;
+    line-height: 40px;
+    line-height: 2.8rem;
+    color: #FFFFFF;
+    border-right: solid 2px #721822;
+    display:inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 33.333%;
+    &:last-child {
+        border:none;
+    }
+    & a {
+        width:100%;
+    }
+    cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+}
+
+.common-ui__related-games--title {
+    display: none;
+}
+
+li.related-game__item {
+    box-sizing: border-box;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: cover;
+    display: block;
+    float: left;
+    margin: 5px;
+
+    a {
+        display: block;
+        line-height: 0;
+        cursor: pointer;
+    }
+}
+
+.common-ui__row-wrapper {
+    height:100%;
+}
+.common-ui__statistics {
+    background: rgba(115,4,11,0.9);
+    border-right: solid 2px #8a0109;
+    font-family: SkyMedium;
+    width:100%;
+}
+.common-ui__statistics--wrapper {
+    padding: 5px 0 0 20px;
+}
+.common-ui__statistics--mode {
+    line-height: 36.8px;
+    line-height: 2.3rem;
+    font-size: 22.416px;
+    font-size: 1.401rem;
+    color: #FFFFFF;
+    margin:0;
+    font-family: SkyMedium;
+}
+.common-ui__statistics--title {
+    line-height: 36.8px;
+    line-height: 2.3rem;
+    font-size: 22.416px;
+    font-size:1.401rem;
+    color: rgba(255,255,255,0.6);
+    margin:0;
+}
+.common-ui__statistics--item {
+    line-height: 36.8px;
+    line-height: 2.3rem;
+    font-size: 22.416px;
+    font-size:1.401rem;
+    color: rgba(255,255,255,0.6);
+    margin:0;
+}
+.common-ui__mode-switch {
+    padding: 10px 20px 10px 20px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+}
+
+
+.common-ui__related {
+    background: #510006;
+    width:100%;
+}
+
+.common-ui__svm {
+    background-image: url(/assets/images/svm/prize-machine/prize-machine-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    position: relative;
+
+    display: flex;
+    float: right;
+    align-items: center;
+
+    a {
+        width: 100%;
+    }
+}
+
+.common-ui__svm-ticket-wrap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+}
+
+.common-ui__svm-ticket-icon {
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    transform-origin: left;
+    left: 50%;
+
+    path {
+        stroke: #FFD7C5;
+        stroke-width: 2;
+        stroke-dasharray: 610px;
+        stroke-dashoffset:610px;
+        fill-opacity: 0;
+        fill: #4b1016;
+        box-shadow: 0px 0px 6px #da0800, 0px 0px 1px #da0800, inset 0px 0px 10px #da0800;
+        animation-name: draw, FillIn;
+        animation-delay: 150ms, 1500ms;
+        animation-duration: 2s, .5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+    }
+}
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes FillIn {
+    from { fill-opacity: 0; }
+    to { fill-opacity: 0.8; }
+}
+
+.common-ui__svm-text {
+    margin-bottom: 0;
+    padding: 0 25px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: SkyMedium;
+    font-size: 15px;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.common-ui__close-bar {
+    display: block;
+    background: #360004;
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 0 35px 0 rgba(0,0,0,0.4);
+    font-size:20px;
+    font-family: SkyMedium;
+    line-height:46px;
+    text-align:center;
+    color:#FFFFFF;
+    border-top: solid 2px #8a0109;
+    cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+}
+.common-ui__close-button {
+    display: block;
+    line-height: 3rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 40px;
+    line-height: 2.8rem;
+    text-align:center;
+    color:#FFFFFF;
+    cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+}
+.common-ui__click-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* must sit below the common UI so it only recieves clicks outside of it */
+}
+
+
+/* MOBILE LANDSCAPE
+* Based on orientation change only so mainly widths, styles specific to other metrics are separate
+*/
+@media only screen and (orientation: landscape) {
+    .common-ui__setting-bar--first {
+        width: 60%;
+        border-right: solid 2px #721822;
+    }
+    .common-ui__setting-bar--second {
+        width: 40%;
+        display:inline-block;
+        padding-left: 0;
+    }
+    .common-ui__close-button {
+        font-size: 13px;
+        font-size: 0.8rem;
+    }
+    .common-ui__statistics {
+        width: 60%;
+    }
+    .common-ui__related {
+        padding-left: 0;
+        width: 40%;
+    }
+    .common-ui__svm {
+        padding-left: 0;
+        width:40%;
+    }
+}
+@media only screen and (orientation: portrait) and (min-width:700px) {
+    .common-ui__setting-bar--first {
+        width: 60%;
+        border-right: solid 2px #721822;
+    }
+    .common-ui__setting-bar--second {
+        width: 40%;
+        display:inline-block;
+    }
+    .common-ui__statistics {
+        width: 60%;
+    }
+    .common-ui__related {
+        width: 40%;
+        height: 250px;
+    }
+    .common-ui__svm {
+        width:40%;
+        height: 250px;
+    }
+}
+
+/* MOBILE LANDSCAPE
+* Fix for the awful vertical screen size when iPhone nav bars are shown on the iPhone 4-5
+*/
+@media only screen and (orientation: landscape) and (max-height: 320px) {
+    .common-ui__statistics {
+        border-bottom: solid 2px #8a0109;
+    }
+    .common-ui__statistics--wrapper {
+        padding: 5px 0 5px 20px;
+    }
+    .common-ui__statistics--title {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 15px;
+        font-size:0.925rem;
+    }
+    .common-ui__statistics--item {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 15px;
+        font-size:0.925rem;
+    }
+    .common-ui__mode-switch {
+        padding: 0 20px 10px 20px;
+        font-size: 16px;
+        font-size: 1rem;
+    }
+    .common-ui__related {
+        height:130px;
+        border-bottom: solid 2px #8a0109;
+    }
+    .common-ui__svm {
+        height:130px;
+        border-bottom: solid 2px #8a0109;
+    }
+}
+@media only screen and (max-height:374px) {
+    .common-ui__statistics--mode {
+        display:none;
+    }
+}
+
+/* iPhone 6 */
+@media only screen and (orientation:landscape) and (min-height: 321px) {
+    .common-ui__statistics--title {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 18px;
+        font-size:1.125rem;
+    }
+    .common-ui__statistics--item {
+        line-height: 24px;
+        line-height: 1.5rem;
+        font-size: 18px;
+        font-size:1.125rem;
+    }
+    .common-ui__related {
+        height:135px;
+    }
+    .common-ui__svm {
+        height:135px;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height:375px) {
+    .common-ui__related {
+        height:171px;
+    }
+    .common-ui__svm {
+        height:171px;
+        display: flex;
+        float: right;
+        align-items: center;
+    }
+}
+
+/* MOBILE PORTRAIT */
+@media only screen and (orientation:portrait) and (min-height:600px) {
+    .common-ui__statistics--wrapper {
+        padding: 15px 0 10px 20px;
+    }
+    .common-ui__statistics--mode {
+        line-height:51px;
+        line-height:3.2rem;
+        font-size:25px;
+        font-size:1.6rem;
+    }
+    .common-ui__statistics--title {
+        line-height: 32px;
+        line-height: 2rem;
+        font-size: 20px;
+        font-size:1.3rem;
+    }
+    .common-ui__statistics--item {
+        line-height: 32px;
+        line-height: 2rem;
+        font-size: 20px;
+        font-size:1.3rem;
+    }
+    .common-ui__mode-switch {
+        padding: 10px 20px 30px 20px;
+    }
+}
+
+
+/* HIDE THE SECOND COLUMN WHEN WE RUN OUT OF ROOM */
+@media only screen and (max-width:554px) {
+    .common-ui__related {
+        display: none;
+    }
+    // .common-ui__svm {
+        //   display: none;
+        // }
+    .common-ui__settings-bar {
+        border: none;
+    }
+    .common-ui__setting-bar--second {
+        display: none;
+    }
+    .common-ui__setting-bar--first {
+        width: 100%;
+        border-right:none;
+    }
+    .common-ui__statistics {
+        width: 100%;
+        border-right:none;
+    }
+}
+
+
+/* CHANGE SETTING BAR FONT SIZES TO AVAILABLE SPACE */
+@media only screen and (min-width:375px) {
+    .common-ui__settings-bar--item, .common-ui__close-button, .common-ui__related-games--title {
+        font-size: 15px;
+        font-size: 0.9rem;
+    }
+    @media only screen and (min-height:600px) {
+        .common-ui__settings-bar--item, .common-ui__close-button, .common-ui__related-games--title {
+            line-height: 56px;
+            line-height: 3.5rem;
+        }
+    }
+}
+@media only screen and (min-width:555px) {
+    .common-ui__settings-bar--item, .common-ui__close-button, .common-ui__related-games--title {
+        font-size: 13px;
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (min-width:690px) {
+    .common-ui__settings-bar--item, .common-ui__close-button, .common-ui__related-games--title {
+        font-size: 16px;
+        font-size: 1.025rem;
+        line-height: 56px;
+        line-height: 3.5rem;
+    }
+}
+@media only screen and (max-height:320px) {
+    .common-ui__settings-bar--item, .common-ui__close-button, .common-ui__related-games--title{
+        font-size: 13px;
+        font-size: 0.8rem;
+    }
+}
+
+/* CLOSE BAR OR BUTTON LOGIC */
+@media only screen and (orientation: landscape) {
+    .common-ui__close-button {
+        display:block;
+    }
+    .common-ui__close-bar {
+        display:none;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height: 321px) {
+    .common-ui__close-button {
+        display: none;
+    }
+    .common-ui__close-bar {
+        display: block;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height: 321px) and (max-height: 440px) {
+    .common-ui__close-bar {
+        font-size: 18px;
+        line-height: 36px;
+    }
+}
+@media only screen and (orientation: portrait) {
+    .common-ui__close-button {
+        display:none;
+    }
+}
+@media only screen and (max-width:480px) and (max-height:320px) {
+    .common-ui__close-bar {
+        display:block;
+    }
+}
+@media only screen and (max-width:320px) and (max-height:480px) {
+    .common-ui__close-bar {
+        display:block;
+    }
+}
+
+
+/* RELATED GAMES LOGIC */
+@media only screen {
+    .common-ui__related-games-items-wrapper {
+        width: 180px;
+        height: 120px;
+        margin: 3px auto;
+        overflow: hidden;
+    }
+    .common-ui__related-games--title {
+        text-align:center;
+        color:#FFFFFF;
+        line-height: 40px;
+        line-height: 2.8rem;
+        cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+    }
+
+    .common-ui__related-games--view-more {
+        line-height: 16px;
+        line-height: 1.0rem;
+        text-align:center;
+        color:#FFFFFF;
+        cursor: pointer; /* This must be there on every clickable thing for iOS Safari to work */
+        font-size: 11px;
+        font-size: 0.68rem;
+    }
+
+    .common-ui__related-games--view-more {
+        display: none;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height: 321px) {
+    .common-ui__related-games--title {
+        display: block;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height:375px) {
+    .common-ui__related-games-items-wrapper {
+        width: 240px;
+        height: 120px;
+        margin: 15px auto 5px;
+    }
+    .common-ui__related-games--title {
+        line-height: 56px;
+        line-height: 3.5rem;
+    }
+    .common-ui__related-games--view-more {
+        display: block;
+    }
+}
+@media only screen and (orientation: portrait) {
+    .common-ui__related-games--title {
+        padding-left: 0;
+    }
+    .common-ui__related {
+        display: none;
+        float: right;
+        padding: 15px 0 15px 20px;
+    }
+    .common-ui__related-games-items-wrapper {
+        width: 264px;
+        height: 60px;
+    }
+    li.related-game__item {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .common-ui__related-games--view-more {
+        display: block;
+        margin-bottom: 0;
+    }
+}
+@media only screen and (orientation: portrait) and (min-height: 460px) {
+    .common-ui__related {
+        display: block;
+    }
+    // .common-ui__svm {
+        //   display: inline-block;
+        //
+        //   .common-ui__svm-ticket-wrap {
+            //       display: none;
+            //   }
+        // }
+}
+@media only screen and (orientation: portrait) and (min-width: 690px) {
+    .common-ui__related {
+        padding-left: 0;
+    }
+    .common-ui__svm {
+        padding-left: 0;
+    }
+    .common-ui__setting-bar--second {
+        padding-left: 0;
+    }
+    .common-ui__related-games--title {
+        display: block;
+        line-height: 56px;
+        line-height: 3.5rem;
+    }
+    .common-ui__related-games-items-wrapper {
+        height: 120px;
+        margin-top: 50px;
+    }
+    .common-ui__related-games--view-more {
+        display: block;
+        margin-top: 15px;
+
+    }
+}
+
+/* MOBILE MENU BUTTON */
+.common-ui__mobile-menu {
+    display:none;
+    position: absolute;
+    top: -4px;
+    left: calc(50% - 55px);
+    width: 110px;
+    height: 33px;
+    background: rgba(147,30,39,0.9);
+    border-radius: 0px 0 20px 20px;
+    border: 2px solid #6E0505;
+    color: #FFFFFF;
+    font-family: SkyMedium;
+    font-size:16px;
+    line-height:35px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    transition: width 0.75s, left 0.75s;
+}
+.common-ui__mobile-menu:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.common-ui__mobile-menu--ticket-icon:after {
+    content: '\F0F0';
+    font-family: skycons;
+    /* width: 21px; */
+    padding: 5px;
+    line-height: 1;
+    background-color: white;
+    border: 1px solid #6E0505;
+    color: white;
+    position: absolute;
+    bottom: -8px;
+    right: -1px;
+    border-radius: 30px;
+    font-size: 12px;
+    opacity: 1;
+}
+
+.common-ui__mobile-menu--isDisabled {
+    opacity: 0.3;
+}
+
+@media only screen and (max-height:60px) {
+    .common-ui__wrapper {
+        display:none;
+    }
+    .common-ui__mobile-menu {
+        display:block;
+    }
+}
+
+.common-ui__wrapper {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}

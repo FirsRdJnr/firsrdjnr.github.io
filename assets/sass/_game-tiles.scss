@@ -1,0 +1,347 @@
+body.game-info {
+    h2, h3 {
+        color: white;
+    }
+}
+
+.game-tiles {
+    position: relative;
+    padding-bottom: 40px;
+
+    &:after {
+        display: block;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        position: absolute;
+        content: "";
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
+    }
+}
+
+// setting the gird for the tiles over different screen sizes
+// two cols for smalles screen
+// upto 6 collumns for largest
+
+.game-tiles__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 50vw);
+
+    &.info-open {
+        grid-template-rows: repeat(5, 50vw);
+    }
+
+    @media only screen and (min-width: 500px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 25vw);
+
+        &.info-open {
+            grid-template-rows: repeat(4, 25vw);
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 20vw);
+
+        &.info-open {
+            grid-template-rows: repeat(4, 20vw);
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 16.666vw);
+
+        &.info-open {
+            grid-template-rows: repeat(4, 16.666vw);
+        }
+    }
+
+    @media only screen and (min-width: 1400px) {
+        grid-template-columns: repeat(6, 230px);
+        grid-template-rows: repeat(2, 230px);
+
+        &.info-open {
+            grid-template-rows: repeat(4, 230px);
+        }
+    }
+}
+
+.tile {
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+
+    &__img {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &.selected{
+        &.info-open:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 9px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid rgba(0,0,0,0.6);
+            position: absolute;
+            bottom: -5px;
+            left: calc(50% - 5px);
+        }
+    }
+
+    // creating different tile sizes
+    // 1x1, 2x2, 2x1, 1x2
+    &.onetwo {
+        @media only screen and (min-width: 1024px) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        // when info panel is open, make this tile half the height
+        .info-open & {
+            grid-row: span 1;
+        }
+    }
+
+    &.twotwo {
+        @media only screen and (min-width: 800px) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        // when info panel is open, make this tile half the height
+        .info-open & {
+            grid-row: span 1;
+        }
+    }
+
+    &.twoone {
+        @media only screen and (min-width: 1024px) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+    }
+
+    // very rough insertion of info panel, will need to be done dynamically
+    // however, the inital state is for the paenl to span 2 cols and 2 rows
+    // each width has a differernt col span, but the row span stays the same.
+
+    &__info {
+        background: rgba(0,0,0,0.6);
+        display: none;
+        margin: 5px;
+
+        &.top-row--open {
+            display: block;
+            position: relative;
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 3;
+        }
+
+        @media only screen and (min-width: 500px) {
+            grid-column: 1 / span 4;
+
+            &.top-row--open {
+                grid-column: 1 / span 4;
+                grid-row: 2 / span 2;
+            }
+        }
+
+        @media only screen and (min-width: 800px) {
+            grid-column: 1 / span 5;
+
+            &.top-row--open {
+                grid-column: 1 / span 5;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            grid-column: 1 / span 6;
+
+            &.top-row--open {
+                grid-column: 1 / span 6;
+            }
+        }
+
+        &--nav {
+            color: white;
+            width: 100%;
+            overflow: auto;
+
+            ul {
+                display: block;
+                width: 400%;
+
+                li {
+                    display: inline-block;
+                    width: 100px;
+                    text-align: center;
+                    padding: 15px 0 10px;
+                    position: relative;
+                    cursor: pointer;
+
+                    &.selected:after {
+                        display: block;
+                        width: 100%;
+                        left: 0;
+                        bottom: 0;
+                        height: 2px;
+                        position: absolute;
+                        content: "";
+                        background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
+                    }
+                }
+            }
+        }
+        &__about,
+        &__bonus,
+        &__jackpots,
+        &__tandcs {
+            display: none;
+
+            &.selected {
+                display: block;
+            }
+        }
+
+        &__about {
+            padding: 10px;
+            text-align: center;
+            color: white;
+
+            h2 {
+                font-size: 20px;
+                small {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        &__features {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+
+            > div {
+                width: 32%;
+                display: flex;
+            }
+
+            &--title {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                background: rgba(0,0,0,0.4);
+                margin-bottom: 5px;
+                border: 1px solid rgba($color--primary, 0.6);
+
+                .glyph {
+                    width: 30px;
+                }
+
+                dt {
+                    font-size: 0.6em;
+                    margin-bottom: 20px;
+                    font-family: $SkyMedium;
+                    text-transform: uppercase;
+                    position: relative;
+                    width: 100%;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        left: 0;
+                        top: 20px;
+                        height: 2px;
+                        position: absolute;
+                        background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba($color--primary, 0.6) 35%, rgba($color--primary, 0.6) 65%, rgba(0, 0, 0, 0.03) 100%);
+                    }
+                }
+
+                dd {
+                    margin: 0 0 0;
+                }
+            }
+
+            svg {
+                width: 22px;
+                height: 26px;
+                fill: white;
+            }
+        }
+
+        &__bonus {
+            position: relative;
+
+            .icon {
+                color: white;
+                position: absolute;
+                top: calc(50% - 15px);
+                font-size: 30px;
+                text-shadow: 0 0 6px black;
+                cursor: pointer;
+
+                &.left {
+                    left: 10px;
+                    transform: rotate(90deg);
+                }
+
+                &.right {
+                    right: 10px;
+                    transform: rotate(270deg);
+                }
+            }
+
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+
+            &--content {
+                width: 100%;
+                height: 30vw;
+                background-color: rgba(0,0,0, 0.6);
+
+                div {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    height: 150px;
+                }
+            }
+
+        }
+
+        &__play {
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;right: 0;
+
+            .btn {
+                width: 100%;
+
+                @media only screen and (min-width: 500px) {
+                    width: auto;
+                }
+            }
+        }
+
+    }
+
+}

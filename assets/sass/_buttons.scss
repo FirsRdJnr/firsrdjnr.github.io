@@ -1,0 +1,31 @@
+.btn {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: $SkyRegular;
+    font-size: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 5px;
+    outline: none;
+    border: 2px solid $color--secondary;
+    border-radius: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+
+    &.btn--default {
+        border: 2px solid $color--secondary;
+        color: $color--secondary;
+    }
+
+    &.btn--primary {
+        background: $color--secondary;
+        color: $color--primary;
+        font-family: $SkyMedium;
+
+        body:not(.touch) &:hover {
+            background: darken($color--secondary, 8%);
+            border-color: darken($color--secondary, 8%);
+        }
+    }
+}

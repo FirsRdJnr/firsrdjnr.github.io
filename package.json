@@ -1,26 +1,20 @@
 {
-  "name": "skybet.github.io",
+  "name": "170220-vegas",
   "version": "1.0.0",
-  "description": "Sky Betting & Gaming Engineering Site",
+  "description": "Vegas Sandbox",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skybet.github.io.git"
-  },
-  "author": "",
+  "author": "V Baron",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skybet.github.io/issues"
-  },
-  "homepage": "https://github.com/skybet.github.io#readme",
   "devDependencies": {
+    "font-awesome": "^4.5.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^3.0.4",
-    "gulp-sass": "^3.1.0",
-    "gulp-util": "^3.0.8"
+    "gulp-livereload": "^3.8.1",
+    "gulp-mustache": "^2.2.0",
+    "gulp-sass": "^2.2.0",
+    "jquery": "2.1.4"
   }
 }

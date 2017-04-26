@@ -1,20 +1,33 @@
 'use strict';
 
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var livereload = require('gulp-livereload');
+var googleWebFonts = require('gulp-google-webfonts');
+var autoprefixer = require('gulp-autoprefixer');
 
-const cssFiles = '_sass/**/*.?(s)css';
 
-gulp.task('sass', () => {
-    gulp.src(cssFiles)
-        .pipe(sass())
+// Build sass
+// -------------------------------------------------------------------------------
+gulp.task('sass', function () {
+    return gulp.src('./assets/sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(cleanCSS())
-        .pipe(gulp.dest('./css/'));
+        .pipe(gulp.dest('./assets/'))
+        .pipe(livereload());
 });
 
+
+// Watch for updates
+// -------------------------------------------------------------------------------
 gulp.task('watch', function () {
-    gulp.watch('_sass/**/*.scss', ['sass']);
+    livereload.listen();
+    gulp.watch('./assets/sass/**/*.scss', ['sass']);
+});
+
+
+// Default: Build all the things!
+// -------------------------------------------------------------------------------
+gulp.task('default', function() {
+    gulp.start('sass', 'fonts');
 });

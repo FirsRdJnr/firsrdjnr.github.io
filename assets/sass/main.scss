@@ -1,0 +1,108 @@
+// Imported font libs
+// -------------------------------------------------------------------------------
+
+@import "normalize";
+@import "variables";
+@import "game-tiles";
+@import "buttons";
+@import "commonui";
+@import "promo-calc";
+@import "game-info";
+
+html {
+    font-family: $SkyRegular;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.icon {
+    display: inline-block;
+    position: relative;
+    zoom: 1;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+
+    &:before {
+        font-family: $skycons;
+        content: attr(data-icon);
+    }
+}
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
+    background: radial-gradient(ellipse at center, $color--primary 0%, $color--shadow 100%);
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    aside {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -300px;
+        width: 300px;
+        background: rgba(0,0,0,0.4);
+
+        nav {
+            overflow-y:auto;
+        }
+    }
+
+    main {
+        flex: 1;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    footer {
+        background: rgba(0,0,0,0.6);
+        color: white;
+
+        &.open {
+            margin-left: 300px;
+            margin-right: -300px;
+        }
+    }
+
+
+    // slide in navigation
+    &.mobile-nav-open {
+        overflow: hidden;
+
+        aside {
+            left: 0;
+        }
+
+        main,
+        footer {
+            margin-left: 300px;
+            margin-right: -300px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.2);
+            filter: blur(5px);
+        }
+
+        footer {
+            background: rgba(0,0,0,0.8);
+        }
+    }
+
+}

@@ -1,0 +1,188 @@
+$color--dark-red-trans: rgba(115,4,11,0.9);
+$color--dark-trans: rgba(62,9,5,0.95);
+
+
+.common-ui-wrap {
+    background-image: url('/assets/img/common-ui/bg-landscape.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    @media only screen and (orientation: portrait) and (max-width: $m-start()) {
+        background-image: url('/assets/img/common-ui/bg-portrait.jpg');
+    }
+}
+.common-ui {
+    background: $color--dark-red-trans;
+    color:#FFF;
+    position: absolute;
+    top: -250px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    transition: top 200ms;
+    box-sizing: border-box;
+
+    &.common-ui__mobile-isOpen {
+        top: 0;
+        height: calc(100% - 33px);
+
+        .common-ui__mobile-toggle {
+            left: 0;
+            width: 100%;
+            background: $color--dark-trans;
+            border-radius: 0;
+            border: none;
+        }
+    }
+
+    &__mobile-toggle {
+        position: absolute;
+        bottom: -32px;
+        left: calc(50% - 55px);
+        width: 110px;
+        height: 33px;
+        background: $color--dark-red-trans;
+        border-radius: 0px 0 10px 10px;
+        border-color: $color--shadow;
+        border-width: 0 2px 2px 2px;
+        border-style: solid;
+        color: $color--inverse;
+        font-family: $SkyMedium;
+        font-size: 16px;
+        line-height: 35px;
+        margin: 0 auto;
+        text-align: center;
+        cursor: pointer;
+        transition: all 200ms, left 200ms;
+    }
+
+    .account-bar {
+        height: 50px;
+        display: flex;
+        @include account-bar-bg-color;
+
+        &__left,
+        &__right {
+            display: flex;
+            align-items: center;
+        }
+
+        &__left {
+            width: 140px;
+            margin: 0 0 0 10px;
+        }
+
+        &__right {
+            width: calc(100% - 140px);
+        }
+
+        &__logo-link {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+
+            .vegas-logo {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__actions {
+            text-align: right;
+            width: 100%;
+        }
+
+        &__links {
+            display: inline-block;
+            padding: 0 15px 0 0;
+            font-size: 14px;
+
+            .icon {
+                margin-right: 2px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    // .common-ui__content
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    &__stats,
+    &__promos {
+        position: relative;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    // .common-ui__stats
+    &__stats {
+
+        &__actions {
+            width: 100%;
+            background: $color--dark-trans;
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 45px;
+
+            li {
+                flex-grow: 1;
+                flex-shrink: 1;
+                display: flex;
+                border-right: solid 2px #721822;
+                align-items: center;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                a {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        &--title {
+            font-size: 22px;
+            font-family: SkyMedium;
+            font-weight: 100;
+            margin: 0;
+            padding: 10px;
+        }
+
+        &--info {
+            padding: 10px;
+
+            dt, dd {
+                float: left;
+            }
+
+            dt {
+                min-width: 100px;
+                clear: both;
+            }
+
+            dd {
+            }
+
+        }
+    }
+
+    &__promos {
+        background: yellow;
+    }
+}

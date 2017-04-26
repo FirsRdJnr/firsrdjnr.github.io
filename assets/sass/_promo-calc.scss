@@ -1,0 +1,133 @@
+.newcalc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+    font-family: $SkyMedium;
+
+    .newcalc__segment {
+        text-align: center;
+        padding: 0 10px 10px 10px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+    }
+
+    .newcalc__title {
+        color: white;
+        margin: 10px 0 ;
+        text-transform: uppercase;
+    }
+
+    .newcalc__error {
+        font-family: $SkyRegular;
+        font-size: 11px;
+        color: black;
+        background: #ffd414;
+        padding: 3px;
+        position: relative;
+        margin: 0 -10px -10px;
+    }
+
+    .newcalc__input {
+        position: relative;
+        padding: 0 40px;
+        text-align: center;
+        min-width: 200px;
+        margin-bottom: 9px;
+
+        .newcalc__controls {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            padding: 19px 0;
+            font-size: 30px;
+            line-height: 0;
+            color: #da0800;
+            background: #ffd414;
+            overflow: hidden;
+            cursor: pointer;
+
+            &.left {
+                left: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            &.right {
+                right: 0;
+                border-radius: 0 3px 3px 0;
+            }
+        }
+
+        input {
+            background: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            font-family: $SkyMedium;
+        }
+    }
+
+    .newcalc__amount {
+        font-size: 20px;
+        background: rgba(255,255,255,0.2);
+        padding: 9px;
+        overflow: hidden;
+    }
+}
+
+.give,
+.play {
+    .newcalc__amount {
+        border-radius: 3px;
+        position: relative;
+        width: 100%;
+        min-width: 200px;
+        margin: 0 auto;
+
+        span {
+            position: relative;
+            display: block;
+        }
+
+        .newcalc__marker {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: repeating-linear-gradient(
+            130deg,
+            rgba(255,212,20,0.2),
+            rgba(255,212,20,0.2) 10px,
+            rgba(255,212,20,0.4) 10px,
+            rgba(255,212,20,0.4) 20px
+            );
+
+            &.hit {
+                background: repeating-linear-gradient(
+                130deg,
+                rgba(255,212,20,0.5),
+                rgba(255,212,20,0.5) 10px,
+                rgba(255,212,20,0.7) 10px,
+                rgba(255,212,20,0.7) 20px
+                );
+                background-size: 100% 30px;
+                animation: barberpole 0.5s linear infinite;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes barberpole {
+    from { background-position: 0 0; }
+    to   { background-position: 0px 30px; }
+}

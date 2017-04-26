@@ -1,0 +1,93 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #151515;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+#instructions {
+    float: left;
+    color: #ccc;
+}
+
+#score {
+    float: right;
+    color: white;
+    font-size: 2em;
+}
+
+.key {
+    color: white;
+}
+
+#game-over, #game-over-overlay {
+    margin: auto;
+    width: 1024px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
+
+#game-over-overlay {
+    background-color: black;
+    opacity: .5;
+}
+
+#game-over {
+    height: 200px;
+    text-align: center;
+    color: white;
+}
+
+#game-over h1 {
+    font-size: 3em;
+    font-family: SkyBold;
+}
+
+#game-over button {
+    font-size: 1.5em;
+}
+
+header {
+    width: 1024px;
+    margin: 190px auto;
+    color: white;
+}
+.logo {
+    width: 200px;
+    height: auto;
+    float: right;
+}
+section#canvas {
+    height: 300px;
+}
+.play-again {
+    background-image: url('/canvas-game-bootstrap-master/img/play-again-button.png');
+    height: 120px;
+    width: 275px;
+    background-position: 0 -112px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+}
