@@ -1,0 +1,131 @@
+@media only screen and (min-width: 1025px) {
+    .desk-one-third, .desk-two-sixths, .desk-four-twelfths {
+        width: 32.333%;
+    }
+}
+
+.page-foot {
+    @include fixed-width-limit();
+    margin: 0 auto;
+}
+
+.promos {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include fixed-width-limit();
+
+    .twotwo {
+        grid-column: span 3;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: rgba($color--inverse, 0.8);
+        margin-bottom: 10px;
+    }
+
+    &__available {
+        padding: 10px;
+    }
+
+    &__active {
+        padding: 10px;
+
+        .promotion {
+            &__img-container {
+                padding-bottom: 40%;
+                background-size: cover;
+                background-position: 50% 50%;
+            }
+
+            &__item {
+                position: relative;
+                margin-bottom: 15px;
+                background: rgba(0,0,0,0.4);
+                border-radius: 3px;
+            }
+
+            &__title {
+                color: rgba($color--inverse, 0.8);
+                font-size: 1.2rem;
+                margin: 10px;
+            }
+
+            &__details {
+                position: relative;
+                z-index: 1;
+            }
+
+            &__remaining {
+                float: left;
+                color: white;
+            }
+
+            &__wager {
+                float: right;
+                color: white;
+
+                &.hit {
+                    float: none;
+                }
+            }
+
+            &__flag {
+                border-radius: 0 0 3px 3px;
+                overflow: hidden;
+                position: relative;
+
+                &--opted-in {
+                    background: rgba(10,88,5,0.5);
+
+                    &__marker {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        top: 0;
+                        background: repeating-linear-gradient(
+                        130deg,
+                        rgba(8,136,0,0.2),
+                        rgba(8,136,0,0.2) 10px,
+                        rgba(8,136,0,0.4)10px,
+                        rgba(8,136,0,0.4)20px);
+                        animation: slide 1s forwards ease-in;
+                        animation-delay: 1s;
+                    }
+
+                    &__marker-hit {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        text-align: center;
+                        background: repeating-linear-gradient(
+                        130deg,
+                        rgba(8,136,0,0.7),
+                        rgba(8,136,0,0.7) 10px,
+                        rgba(8,136,0,0.9) 10px,
+                        rgba(8,136,0,0.9) 20px
+                        );
+                        background-size: 100% 30px;
+                        animation: barberpole 0.5s linear infinite;
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+@keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes barberpole {
+    from { background-position: 0 0; }
+    to   { background-position: 0px 30px; }
+}

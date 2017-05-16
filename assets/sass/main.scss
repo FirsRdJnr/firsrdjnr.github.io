@@ -8,6 +8,7 @@
 @import "commonui";
 @import "promo-calc";
 @import "game-info";
+@import "promo-list";
 
 html {
     font-family: $SkyRegular;
@@ -66,9 +67,7 @@ body {
     main {
         flex: 1;
         width: 100%;
-        max-width: 1400px;
         margin: 0 auto;
-        padding: 0 10px;
     }
 
     footer {
