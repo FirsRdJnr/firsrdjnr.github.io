@@ -1,0 +1,345 @@
+@media only screen and (min-width: 1025px) {
+    .desk-one-third, .desk-two-sixths, .desk-four-twelfths {
+        width: 32.333%;
+    }
+}
+
+.page-foot {
+    @include fixed-width-limit();
+    margin: 0 auto;
+}
+
+.promos-0522 {
+    margin: 0 auto;
+    @include fixed-width-limit();
+
+    @media only screen and (min-width: 800px) {
+        display: flex;
+    }
+
+    .tabs-menu {
+        margin: 2px 0;
+        text-align: center;
+        width: 100%;
+        line-height: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @media only screen and (min-width: 500px) {
+        }
+
+        @media only screen and (min-width: 650px) {
+        }
+
+        @media only screen and (min-width: 800px) {
+            display: none;
+        }
+
+        @media only screen and (min-width: 1024px) {
+        }
+
+        @media only screen and (min-width: 1200px) {
+        }
+
+        li {
+            display: inline-block;
+            text-align: center;
+            font-family: $SkyRegular;
+            color: white;
+            text-transform: uppercase;
+            padding: 20px 0px;
+            cursor: pointer;
+            position: relative;
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            a {
+                text-decoration: none;
+                position: relative;
+            }
+
+            &.current,
+            &:hover {
+
+                a:after {
+                    display: block;
+                    width: 100%;
+                    left: 0;
+                    bottom: -6px;
+                    height: 2px;
+                    position: absolute;
+                    content: "";
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
+                }
+            }
+
+            &.active {
+                background: rgba(0,0,0,0.4);
+            }
+        }
+    }
+
+
+
+    h1 {
+        font-size: 30px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: rgba($color--inverse, 0.8);
+        margin-bottom: 10px;
+    }
+
+
+    .promotion {
+        &__item {
+            position: relative;
+            margin-bottom: 15px;
+            background: rgba(0,0,0,0.4);
+            // background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+            display: flex;
+            flex-wrap: wrap;
+
+            &:last-child {
+                flex-grow: 1;
+            }
+        }
+
+        &__img-container {
+            padding-bottom: 40%;
+            background-size: cover;
+            background-position: 50% 50%;
+            width: 100%;
+        }
+
+        &__title {
+            color: rgba($color--inverse, 0.8);
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+
+        &__subtitle {
+            color: rgba($color--inverse, 0.8);
+            margin: 10px;
+        }
+
+        &__details {
+            position: relative;
+            z-index: 1;
+        }
+
+        &__remaining {
+            float: left;
+            color: white;
+        }
+
+        &__wager {
+            float: right;
+            color: white;
+
+            &.hit {
+                float: none;
+            }
+        }
+
+        &__flag {
+            border-radius: 0 0 3px 3px;
+            overflow: hidden;
+            position: relative;
+            align-self: flex-end;
+
+            &--opted-in {
+                background: rgba(10,88,5,0.5);
+
+                &__marker {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    top: 0;
+                    background: repeating-linear-gradient(
+                    130deg,
+                    rgba(8,136,0,0.2),
+                    rgba(8,136,0,0.2) 10px,
+                    rgba(8,136,0,0.4)10px,
+                    rgba(8,136,0,0.4)20px);
+                    animation: slide 1s forwards ease-in;
+                    animation-delay: 1s;
+                }
+
+                &__marker-hit {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    text-align: center;
+                    background: repeating-linear-gradient(
+                    130deg,
+                    rgba(8,136,0,0.7),
+                    rgba(8,136,0,0.7) 10px,
+                    rgba(8,136,0,0.9) 10px,
+                    rgba(8,136,0,0.9) 20px
+                    );
+                    background-size: 100% 30px;
+                    animation: barberpole 0.5s linear infinite;
+                }
+
+
+            }
+        }
+    }
+
+    &__available {
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        @media only screen and (min-width: 800px) {
+            width: 75%;
+        }
+
+        .promo-hero {
+            margin: 0 0 10px;
+        }
+
+        .promotion__item {
+            border: 2px solid rgba(0,0,0,0.3);
+            // border: 2px solid rgba(255,255,255,0.4);
+
+            &.covert {
+                border: 2px solid $color--notifications;
+            }
+            &:not(.promo-hero) {
+                border-radius: 4px;
+                margin-bottom: 10px;
+                width: 100%;
+
+                @media only screen and (min-width: 500px) {
+
+                    &:nth-child(n+4) {
+                        width: 50%;
+
+                        &:nth-child(even) {
+                            width: calc(50% - 10px);
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                @media only screen and (min-width: 650px) {
+                    &:nth-child(n+2) {
+                        width: 50%;
+
+                        &:nth-child(even) {
+                            width: calc(50% - 10px);
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                @media only screen and (min-width: 1024px) {
+                    &:nth-child(n+4) {
+                        width: 25%;
+
+                        &:nth-child(even) {
+                            width: calc(25% - 10px);
+                            margin-right: 10px;
+                        }
+                        &:nth-child(odd) {
+                            width: calc(25% - 5px);
+                            margin-right: 10px;
+                        }
+
+                        &:nth-child(7),
+                        &:nth-child(11),
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__active {
+        padding: 10px;
+        border-radius: 3px;
+        margin: 0px 0 15px;
+        background: rgba(0,0,0,0.4);
+        display: flex;
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media only screen and (min-width: 800px) {
+            width: 25%;
+            margin: 10px 0 20px 10px;
+            align-content: flex-start;
+        }
+
+        .promotion__item {
+            width: 100%;
+            border: 2px solid green;
+
+            @media only screen and (min-width: 500px) {
+                width: calc(50% - 5px);
+            }
+
+            @media only screen and (min-width: 800px) {
+                width: 100%;
+                margin: 0 0 15px;
+            }
+        }
+
+        h1 {
+            margin: 10px 0 15px;
+            padding: 0 0 10px 0;
+            font-family: $SkyRegular;
+            font-size: 24px;
+            position: relative;
+            display: none;
+
+            &:after {
+                display: block;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                position: absolute;
+                content: "";
+                background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(8,136,0,0.9) 35%, rgba(8,136,0,0.9) 65%, rgba(0, 0, 0, 0.03) 100%);
+            }
+
+            @media only screen and (min-width: 800px) {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+.warning {
+    margin: 10px;
+}
+@keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes barberpole {
+    from { background-position: 0 0; }
+    to   { background-position: 0px 30px; }
+}

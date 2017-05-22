@@ -9,12 +9,14 @@
     margin: 0 auto;
 }
 
-.promos {
+.promos--vertical {
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
+    padding: 10px;
     @include fixed-width-limit();
+
+    &.vertical {
+        display: block;
+    }
 
     .twotwo {
         grid-column: span 3;
@@ -29,34 +31,13 @@
     }
 
     &__available {
-        padding: 10px;
+
     }
 
     &__active {
-        padding: 10px;
-        background: rgba(0,0,0,0.4);
-        border-radius: 3px;
-        margin: 10px 0 15px;
-        text-align: center;
-
-        h1 {
-            margin: 10px 0 15px;
-            padding: 0 0 10px 0;
-            font-family: $SkyRegular;
-            font-size: 24px;
-            position: relative;
-
-            &:after {
-                display: block;
-                width: 100%;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                position: absolute;
-                content: "";
-                background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
-            }
-        }
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
 
         .promotion {
@@ -68,7 +49,8 @@
 
             &__item {
                 position: relative;
-                margin-bottom: 15px;
+                margin-bottom: 0;
+                padding-bottom: 30px;
                 background: rgba(0,0,0,0.4);
                 border-radius: 3px;
             }
@@ -101,7 +83,6 @@
             &__flag {
                 border-radius: 0 0 3px 3px;
                 overflow: hidden;
-                position: relative;
 
                 &--opted-in {
                     background: rgba(10,88,5,0.5);
