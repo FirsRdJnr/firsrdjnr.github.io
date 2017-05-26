@@ -11,6 +11,8 @@
 @import "promo-list";
 @import "promo-list-vert";
 @import "promo-list-0522";
+@import "promo-list-0524";
+@import "promo-list-05242";
 
 html {
     font-family: $SkyRegular;
@@ -75,6 +77,18 @@ body {
     footer {
         background: rgba(0,0,0,0.6);
         color: white;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            left: 0;
+            top: 0px;
+            height: 2px;
+            position: absolute;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
+        }
 
         &.open {
             margin-left: 300px;
@@ -103,6 +117,8 @@ body {
 
         footer {
             background: rgba(0,0,0,0.8);
+
+
         }
     }
 
