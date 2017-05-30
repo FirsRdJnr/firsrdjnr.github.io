@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var googleWebFonts = require('gulp-google-webfonts');
 var autoprefixer = require('gulp-autoprefixer');
 
 
@@ -17,12 +16,18 @@ gulp.task('sass', function () {
         .pipe(livereload());
 });
 
+gulp.task('copy', function() {
+    gulp.src(['./node_modules/jquery/dist/jquery.min.js'])
+        .pipe(gulp.dest('./assets/js/'))
+});
+
 
 // Watch for updates
 // -------------------------------------------------------------------------------
 gulp.task('watch', function () {
+
     livereload.listen();
-    gulp.watch('./assets/sass/**/*.scss', ['sass']);
+    gulp.watch('./assets/sass/**/*.scss', ['sass', 'copy']);
 });
 
 

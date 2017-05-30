@@ -1948,7 +1948,8 @@ body.game-info h2, body.game-info h3 {
     .promos-05242 .promotion__item.cant-opt-in .promotion__title,
     .promos-05242 .promotion__item.cant-opt-in .promotion__subtitle {
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      opacity: 0.6; }
   .promos-05242 .promotion__img-container {
     padding-bottom: 40%;
     background-size: contain;
@@ -2035,8 +2036,7 @@ body.game-info h2, body.game-info h3 {
         z-index: 2; }
       .promos-05242 .promotion__flag--cant-opt-in .promotion__wager {
         text-transform: uppercase;
-        letter-spacing: 1px;
-        color: rgba(255, 255, 255, 0.8); }
+        letter-spacing: 1px; }
   .promos-05242 .tabs-menu {
     margin: 0;
     width: 100%;
@@ -2072,7 +2072,7 @@ body.game-info h2, body.game-info h3 {
           background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255, 212, 20, 0.5) 35%, rgba(255, 212, 20, 0.5) 65%, rgba(0, 0, 0, 0.03) 100%); }
   .promos-05242__active {
     background: #59060c;
-    min-width: 750px;
+    min-width: 950px;
     overflow-x: auto; }
     .promos-05242__active__content {
       display: -webkit-box;
@@ -2103,11 +2103,13 @@ body.game-info h2, body.game-info h3 {
         .promos-05242__active .promotion__item.empty .content {
           width: 100%;
           margin: 0 20px;
-          text-align: center; }
+          text-align: center;
+          padding: 10px; }
         .promos-05242__active .promotion__item.empty h3 {
           width: 100%;
           color: rgba(255, 255, 255, 0.6);
-          font-size: 20px;
+          font-size: 16px;
+          margin: 0 0 6px 0;
           font-family: "SkyRegular", Arial, Verdana, sans-serif;
           text-transform: uppercase;
           text-align: center; }
@@ -2117,7 +2119,7 @@ body.game-info h2, body.game-info h3 {
                   transform: rotate(-90deg);
           border: 1px dashed rgba(255, 255, 255, 0.4);
           border-radius: 100px;
-          padding: 20px;
+          padding: 14px;
           margin: 0 auto;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -2130,7 +2132,7 @@ body.game-info h2, body.game-info h3 {
           -webkit-box-pack: center;
               -ms-flex-pack: center;
                   justify-content: center;
-          font-size: 20px; }
+          font-size: 14px; }
         .promos-05242__active .promotion__item.empty:hover i {
           color: rgba(255, 255, 255, 0.6);
           border: 1px solid rgba(255, 255, 255, 0.4); }
@@ -2188,6 +2190,17 @@ body.game-info h2, body.game-info h3 {
       width: 100%;
       text-align: left;
       margin: 20px 0px 20px 0px; }
+      .promos-05242__available--title.reasons, .promos-05242__justforyou--title.reasons {
+        padding: 0 10px; }
+        .promos-05242__available--title.reasons:after, .promos-05242__justforyou--title.reasons:after {
+          display: block;
+          width: 100%;
+          left: 0;
+          top: -30px;
+          height: 2px;
+          position: absolute;
+          content: "";
+          background: linear-gradient(to right, rgba(255, 255, 255, 0.03) 0%, rgba(218, 8, 0, 0.5) 35%, rgba(218, 8, 0, 0.5) 65%, rgba(255, 255, 255, 0.03) 100%); }
     .promos-05242__available__content, .promos-05242__justforyou__content {
       display: -webkit-box;
       display: -ms-flexbox;
