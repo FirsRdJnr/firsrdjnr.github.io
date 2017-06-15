@@ -1,0 +1,427 @@
+.party-pots-body {
+    background: black;
+
+    .img-top,
+    .img-bottom {
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+$color--pp-house: #08a5ae;
+$color--pp-pool: #207dcc;
+$color--pp-club: #8c42f0;
+$color--pp-beach: #53ca25;
+$color--pp-boat: #f7c257;
+$color--pp-gig: #dc550d;
+$color--pp-vegas: #e3100b;
+
+.party-pots {
+    z-index: 1;
+    margin: 40px auto;
+    position: relative;
+    padding: 40px 10px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('/assets/img/party-pots/party-pots-bg-beach.jpg');
+        background-color: #0d0224;
+        background-position: top center;
+        background-size: 250%;
+        background-repeat: no-repeat;
+
+        @media only screen and (min-width: 500px) {
+            background-size: 200%;
+        }
+
+        @media only screen and (min-width: 650px) {
+            background-size: 150%;
+        }
+
+        @media only screen and (min-width: 800px) {
+            background-size: 120%;
+        }
+
+        @media only screen and (min-width: 1024px) {
+        }
+
+        @media only screen and (min-width: 1200px) {
+        }
+    }
+    &:after {
+        content: "";
+        background:
+        radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 65%, rgba(0, 0, 0, 0.7) 100%);;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+
+
+    &__video {
+        opacity: 0;
+        width: 100%;
+        animation: video-fade 40s linear;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        // bottom: 0;
+        // overflow: hidden;
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            // width: auto;
+            // height: auto;
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%,-50%);
+        }
+    }
+
+    header,
+    section {
+        @include fixed-width-limit();
+        margin: 40px auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    header {
+        animation: content-fade 40s linear;
+    }
+
+    &__logo {
+        width: 300px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__winner {
+        margin: 20px auto 40px;
+        text-align: center;
+        width: 50%;
+        min-width: 300px;
+
+        h2,
+        h1 {
+            margin: 0 0 1px;
+            padding: 0;
+            color: white;
+            text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000;
+        }
+
+        h1 {
+            display: inline-block;
+            position: relative;
+            font-family: $SkyBold;
+            letter-spacing: 1px;
+            font-size: 40px;
+            line-height: 0.68em;
+            margin: 20px 0 0 0;
+            z-index: 2;
+        }
+
+        div[class^="party-pots__winner"] h1:before {
+            content: "";
+            position: absolute;
+            right: -120px;
+            bottom: 0px;
+            left: -120px;
+            display: block;
+            height: 3px;
+            z-index: 1;
+        }
+
+        &--beach {
+
+            h1 {
+                text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-beach, 0 0 20px $color--pp-beach, 0 0 40px $color--pp-beach;
+
+                &:before {
+                    background: linear-gradient(to right, rgba(255,255,255, 0.03) 0%, rgba($color--pp-beach,0.5) 35%, rgba($color--pp-beach,0.5) 65%, rgba(255,255,255, 0.03) 100%);
+                }
+            }
+        }
+    }
+
+    &__pots {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        article {
+            flex-grow: 1;
+            position: relative;
+            margin: 5px;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-align: center;
+            color: rgba(255,255,255,.65);
+            border-width: 3px;
+            border-style: solid;
+            background: #0c1445;
+            max-width: calc(50% - 10px);
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                top: -2px;
+                right: -2px;
+                bottom: -2px;
+                left: -2px;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 5px;
+            }
+
+            &:after {
+                top: -5px;
+                right: -5px;
+                bottom: -5px;
+                left: -5px;
+                border-width: 2px;
+                border-radius: 10px;
+            }
+        }
+
+        p {
+            font-size: 26px;
+            font-family: $SkyBold;
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+        }
+
+        &--house {
+            border-color: lighten($color--pp-house, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-house, inset 0 0 20px $color--pp-house, 0 0 20px 2px $color--pp-house, inset 0 0 20px 2px $color--pp-house;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-house, 0 0 20px $color--pp-house;}
+
+            &:before { border-color: lighten($color--pp-house, 0%);}
+            &:after { border-color: lighten($color--pp-house, 0%);}
+        }
+
+        &--pool {
+            border-color: lighten($color--pp-pool, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-pool, inset 0 0 20px $color--pp-pool, 0 0 20px 2px $color--pp-pool, inset 0 0 20px 2px $color--pp-pool;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-pool, 0 0 20px $color--pp-pool;}
+
+            &:before { border-color: lighten($color--pp-pool, 0%);}
+            &:after { border-color: lighten($color--pp-pool, 0%);}
+        }
+
+        &--club {
+            border-color: lighten($color--pp-club, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-club, inset 0 0 20px $color--pp-club, 0 0 20px 2px $color--pp-club, inset 0 0 20px 2px $color--pp-club;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-club, 0 0 20px $color--pp-club;}
+
+            &:before { border-color: lighten($color--pp-club, 0%);}
+            &:after { border-color: lighten($color--pp-club, 0%);}
+        }
+
+        &--beach {
+            border-color: lighten($color--pp-beach, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-beach, inset 0 0 20px $color--pp-beach, 0 0 20px 2px $color--pp-beach, inset 0 0 20px 2px $color--pp-beach;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-beach, 0 0 20px $color--pp-beach;}
+
+            &:before { border-color: lighten($color--pp-beach, 0%);}
+            &:after { border-color: lighten($color--pp-beach, 0%);}
+        }
+
+        &--boat {
+            border-color: lighten($color--pp-boat, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-boat, inset 0 0 20px $color--pp-boat, 0 0 20px 2px $color--pp-boat, inset 0 0 20px 2px $color--pp-boat;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-boat, 0 0 20px $color--pp-boat;}
+
+            &:before { border-color: lighten($color--pp-boat, 0%);}
+            &:after { border-color: lighten($color--pp-boat, 0%);}
+        }
+
+        &--gig {
+            border-color: lighten($color--pp-gig, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-gig, inset 0 0 20px $color--pp-gig, 0 0 20px 2px $color--pp-gig, inset 0 0 20px 2px $color--pp-gig;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-gig, 0 0 20px $color--pp-gig;}
+
+            &:before { border-color: lighten($color--pp-gig, 0%);}
+            &:after { border-color: lighten($color--pp-gig, 0%);}
+        }
+
+        &--vegas {
+            border-color: lighten($color--pp-vegas, 40%);
+            box-shadow: 0 0 5px #fff, 0 0 20px $color--pp-vegas, inset 0 0 20px $color--pp-vegas, 0 0 20px 2px $color--pp-vegas, inset 0 0 20px 2px $color--pp-vegas;
+
+            p { text-shadow: 0 0 5px #fff, 0px 0px 6px #000, 0 0 10px $color--pp-vegas, 0 0 20px $color--pp-vegas;}
+
+            &:before { border-color: lighten($color--pp-vegas, 0%);}
+            &:after { border-color: lighten($color--pp-vegas, 0%);}
+        }
+    }
+
+    &__title {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000;
+    }
+
+    &__games {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        &--tile {
+            flex-grow: 1;
+            flex-shrink: 1;
+            position: relative;
+            margin: 5px;
+            line-height: 0;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: -20px;
+                left: calc(50% - 30px);
+                height: 40px;
+                width: 60px;
+                background-image: url('/assets/img/party-pots/party-pots-icon.png');
+                background-size: contain;
+                display: block;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 4px solid white;
+            }
+        }
+
+    }
+
+    &__recent {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        color: white;
+
+
+        &--wins {
+            flex-grow: 1;
+            flex-shrink: 1;
+            margin: 5px;
+
+            @media only screen and (max-width: 799px) {
+                &:nth-child(n+3) {
+                    display: none;
+                }
+            }
+
+            @media only screen and (max-width: 1023px) {
+                &:nth-child(n+4) {
+                    display: none;
+                }
+            }
+
+            @media only screen and (min-width: 1024px) {
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+
+        &--star {
+            width: 70px;
+            position: absolute;
+
+        }
+        h4, p {
+            margin: 0;
+            padding: 0 0 0 80px;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-family: $SkyMedium;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px 0 5px;
+        }
+
+        p {
+            font-size: 16px;
+
+            strong {
+                font-family: $SkyMedium;
+                font-size: 18px;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+
+
+
+
+    @keyframes video-fade {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes content-fade {
+        0% {
+            opacity: 1;
+        }
+        10% {
+            opacity: 1;
+        }
+        15% {
+            opacity: 0;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

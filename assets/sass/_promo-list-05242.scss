@@ -4,18 +4,9 @@
     }
 }
 .global-nav__list--item.global-nav__list--item--active {
-    box-shadow: none!important;
+    // background: #59060c;
+    // box-shadow: inset 0 -2px 0 rgba(255,255,255,0.8)!important;
 
-    &:after {
-        display: block;
-        width: 100%;
-        left: 0;
-        bottom: 0px;
-        height: 2px;
-        position: absolute;
-        content: "";
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
-    }
 }
 
 #promos-05242 {
@@ -74,7 +65,7 @@
         }
 
         &__img-container {
-            padding-bottom: 40%;
+            padding-bottom: 30%;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: 50% 50%;
@@ -122,10 +113,8 @@
             font-size: 14px;
             font-size: .875rem;
             line-height: 1.42857;
-            width: 100%;
             font-weight: bold;
-            margin: 10px;
-            padding: 6px;
+            padding: 0 10px 10px;
 
             i {
                 margin-right: 4px;
@@ -149,7 +138,6 @@
             border-radius: 0 0 3px 3px;
             overflow: hidden;
             position: relative;
-            align-self: flex-end;
 
             i {
                 margin-right: 6px;
@@ -209,6 +197,7 @@
 
     .tabs-menu {
         margin: 0;
+        margin-bottom: -1px;
         width: 100%;
         line-height: 1;
         position: relative;
@@ -239,31 +228,16 @@
             display: inline-block;
             text-align: center;
             font-family: $SkyRegular;
-            color: rgba(255,255,255,0.6);
+            color: $color--dark-trans;
+            color: white;
             text-transform: uppercase;
-            padding: 20px 20px 20px 0px;
+            padding: 20px 20px 10px 5px;
             cursor: pointer;
             position: relative;
 
             a {
                 text-decoration: none;
                 position: relative;
-            }
-
-            &.active,
-            &:hover {
-                color: rgba(255,255,255,1);
-
-                a:after {
-                    display: block;
-                    width: 100%;
-                    left: 0;
-                    bottom: -6px;
-                    height: 2px;
-                    position: absolute;
-                    content: "";
-                    background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
-                }
             }
         }
     }
@@ -273,19 +247,55 @@
         background: #59060c;
         min-width: 950px;
         overflow-x: auto;
+        padding: 10px 0;
+        position: relative;
+
+
 
         &__content {
             display: flex;
             position: relative;
             flex-wrap: nowrap;
-            justify-content: space-between;
             @include fixed-width-limit();
             width: 100%;
             padding: 0 10px 10px;
         }
 
         .promotion__item {
-            width: calc(25% - 10px);
+            width: calc(33% - 10px);
+            margin-left: 5px;
+            margin-right: 5px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.8);
+
+            .promotion__title {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .promotion__playnow {
+                font-size: 0.95rem;
+                line-height: 1;
+                display: block;
+                margin: 10px auto 10px;
+                color: white;
+                padding: 8px 10px;
+                border: 1px solid white;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border-radius: 4px;
+            }
+
+            .promotion__covert {
+                background: $color--notifications;
+                border-radius: 4px;
+                padding: 8px;
+                width: 34px;
+                height: 34px;
+                color: white;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
 
             &.empty {
                 border: 2px dashed rgba(255,255,255,0.4);
@@ -396,7 +406,6 @@
             text-align: center;
             font-family: $SkyRegular;
             text-transform: uppercase;
-            cursor: pointer;
             position: relative;
             width: 100%;
             text-align: left;
@@ -443,20 +452,14 @@
                 }
             }
 
-        }
-    }
+            .promotion__flag--opted-in {
+                background: rgba(8,136,0,0.9);
+            }
 
-    &__justforyou {
-        background: radial-gradient(ellipse at center, #f5f5f5 0%, #e8dace 100%);
-        max-width: 100%;
+            &__yourein {
 
-        &--title {
-            color: darken($color--notifications, 20%);
-            margin: 10px 0 20px 0;
-        }
+            }
 
-        &__content {
-            @include fixed-width-limit();
         }
     }
 
@@ -466,17 +469,10 @@
         @include fixed-width-limit();
         position: relative;
         text-align: center;
-        padding: 10px 20px;
+        padding: 10px;
 
-        &:before {
-            display: block;
-            width: 100%;
-            left: 0;
-            top: 0;
-            height: 2px;
-            position: absolute;
-            content: "";
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.03) 0%, rgba(255,212,20,0.5) 35%, rgba(255,212,20,0.5) 65%, rgba(0, 0, 0, 0.03) 100%);
+        @media only screen and (min-width: 500px) {
+            padding: 10px 20px;
         }
 
         &__content {
@@ -510,12 +506,13 @@
         &__text {
             text-align: center;
             color: white;
-            padding: 20px 10px;
+            padding: 20px 20px 0;
 
             .promo-hero__title {
                 font-size: 1.8rem;
                 line-height: 1.2;
                 margin: 0;
+                color: white;
 
                 @media only screen and (min-width: 1024px) {
                     font-size: 2.4rem;
@@ -524,12 +521,52 @@
             }
 
             .promo-hero__subtitle {
-                font-size: 1.4em;
+                font-size: 1.2em;
                 line-height: 1.2;
 
                 @media only screen and (min-width: 1024px) {
                     font-size: 1.5rem;
                     line-height: 1.4;
+                }
+            }
+        }
+
+        .promo-hero__cta {
+            padding-bottom: 10px;
+
+            @media only screen and (min-width: 800px) {
+                padding-bottom: 0;
+            }
+
+            .btn--text {
+                margin: 20px;
+                display: block;
+                text-decoration: underline;
+
+                @media only screen and (min-width: 800px) {
+                    margin: 30px 20px 0;
+                    // display: inline-block;
+                }
+            }
+
+            .btn--yellow {
+                padding: 12px 30px 12px 30px;
+
+                @media only screen and (min-width: 800px) {
+                    font-size: 20px;
+                    padding: 12px 40px 12px 40px;
+                }
+
+                &.hollow {
+                    background: transparent;
+                    border: 2px solid #ffd414;
+                    padding: 10px 30px 10px 30px;
+                    color: #ffd414;
+                    margin-right: 5px;
+
+                    @media only screen and (min-width: 800px) {
+                        padding: 10px 40px 10px 40px;
+                    }
                 }
             }
         }
