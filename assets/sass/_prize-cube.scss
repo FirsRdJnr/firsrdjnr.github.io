@@ -1,0 +1,555 @@
+body.prize-cube {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/bg-cube-red-world-front.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: SkyBold;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+@font-face {
+    font-family: 'SkyBold';
+    src: url('https://st1.skybet.com/static/fonts/skybold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.game {
+    max-width: 600px;
+}
+
+
+.podium {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: -10px;
+    position: relative;
+    z-index: 2;
+
+    img {
+        width: 100%;
+    }
+}
+
+.cube-wrap {
+    width: 100%;
+    padding: 10% 10% 0;
+
+    .cube {
+        transform-style: preserve-3d;
+        transform-origin: 50% 50%;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+
+        &--side {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/cube-red-world-front_copy.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10%;
+
+            .touch-cube {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(33.333% - 12px);
+                height: calc(33.333% - 12px);
+                box-sizing: border-box;
+                margin: 6px;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    position: relative;
+                    z-index: 3;
+                    color: white;
+                    text-shadow: 0 0 2px rgba(99, 9, 9, 0.2),
+                                 0 0 9px rgba(99, 9, 9, 0.75);
+                    font-family: SkyBold, sans-serif;
+                    font-weight: bold;
+                    font-size: 40px;
+                    opacity: 0;
+                    transition: all .2s ease-in-out;
+                    transition-delay: .7s;
+                }
+
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 10px;
+                }
+
+                &:before {
+                    background: radial-gradient(ellipse at center, #880f13 0%, #610a0d 100%);
+                    transition: all .2s ease-in-out;
+                }
+
+                &:after {
+                    animation: clickCubeGlow 1s ease;
+                    animation-fill-mode: forwards;
+                }
+
+                // add animation delay for cube light-up when the spin stops
+                &:nth-child(1):after {
+                    animation-delay: 1.6s
+                }
+                &:nth-child(2):after {
+                    animation-delay: 1.8s
+                }
+                &:nth-child(3):after {
+                    animation-delay: 2s
+                }
+                &:nth-child(4):after {
+                    animation-delay: 2.1s
+                }
+                &:nth-child(5):after {
+                    animation-delay: 2.3s
+                }
+                &:nth-child(6):after {
+                    animation-delay: 2.5s
+                }
+                &:nth-child(7):after {
+                    animation-delay: 2.6s
+                }
+                &:nth-child(8):after {
+                    animation-delay: 2.8s
+                }
+                &:nth-child(9):after {
+                    animation-delay: 3s
+                }
+
+                // add a flicker to random cubes
+                &.flicker {
+                    &:after {
+                        animation: clickCubeGlow 1s ease forwards,
+                            flicker 7.3s linear infinite;
+                    }
+
+                    // iterate over randome cubes and add different animation delay
+                    @for $i from 1 through 9 {
+                        &:nth-child(#{$i}):after {
+                            animation-delay: 1.8s, $i * 1s;
+                        }
+                    }
+                }
+
+                // when you hover a cube target the :befpre that has colour and change it
+                &:hover {
+                    &:before {
+                        background: radial-gradient(ellipse at center, #610a0d 0%, #430407 100%);
+                        filter: brightness(15) hue-rotate(50deg) contrast(2);
+                        box-shadow: 0 0 10px 0px rgba(255,255,255,0.1) inset;
+                    }
+                }
+
+                // when a cube is clicked, add the reveal animation
+                &.clicked {
+
+                    &:before {
+                        animation: clicked .8s ease forwards;
+                    }
+
+                    span {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        // Animations for when the picks have been made.
+        &.done {
+            animation: spinDone 1.4s 2s cubic-bezier(.42,0,.51,1.5) forwards;
+
+            .touch-cube {
+                cursor: default;
+
+                &:hover:before {
+                    background: radial-gradient(ellipse at center, #880f13 0%, #610a0d 100%);
+                    filter: none;
+                }
+            }
+
+            .back {
+
+                .touch-cube {
+                    display: none;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+// set the cube sides in place
+.cube {
+    div.top {
+        transform: translateY(-50%) rotateX(90deg);
+    }
+    div.right {
+        transform: translateX(50%) rotateY(90deg);
+    }
+    div.bottom {
+        transform: translateY(50%) rotateX(-90deg);
+        background-image: radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.7) 100%), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/cube-red-world-front_copy.png');
+    }
+    div.left {
+        transform: translateX(-50%) rotateY(-90deg);
+    }
+    div.front {
+        transform: rotateX(90deg) translateY(50%) rotateX(-90deg);
+    }
+    div.back {
+        transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+    }
+}
+
+// spin the whole cube backwards for the win panel
+@keyframes clicked {
+    0% {
+        background: radial-gradient(ellipse at center, #610a0d 0%, #430407 100%);
+        filter: brightness(15) hue-rotate(50deg) contrast(2);
+        box-shadow: 0 0 10px 0px rgba(255,255,255,0.1) inset;
+    }
+    70% {
+        background: radial-gradient(ellipse at center, #610a0d 0%, #430407 100%);
+        filter: brightness(40) hue-rotate(50deg) contrast(2);
+        box-shadow: 0 0 10px 0px rgba(255,255,255,0.1) inset;
+    }
+    100% {
+        background: radial-gradient(ellipse at center, #610a0d 0%, #430407 100%);
+        filter: brightness(5) hue-rotate(50deg) contrast(2);
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.1) inset;
+    }
+}
+
+
+// inital cube light up
+@keyframes clickCubeGlow {
+    0% { box-shadow: none;}
+    1% { opacity:0.1; box-shadow: 0px 0px 0px 2px rgba(white,0.2), 0px 0px 5px 5px rgba(red,0.2), 0px 0px 1px 1px red inset, 0px 0px 78px 4px rgba(red,0.75);}
+    2% { opacity:1; box-shadow: 0px 0px 0px 2px rgba(white,0.5), 0px 0px 5px 5px rgba(red,0.7), 0px 0px 1px 1px rgba(red,0.7) inset, 0px 0px 48px 4px rgba(red,0.7);}
+    5%  { opacity: 0; }
+    10% { opacity:1; box-shadow: 0px 0px 0px 2px rgba(white,0.2), 0px 0px 5px 5px rgba(red,0.2), 0px 0px 1px 1px red inset, 0px 0px 28px 4px rgba(darkred,0.7);}
+    11% { opacity: .4; }
+    18% { opacity: 1; box-shadow: 0px 0px 0px 2px rgba(white,0.2), 0px 0px 5px 5px rgba(hotpink,0.5), 0px 0px 1px 1px red inset, 0px 0px 28px 4px rgba(hotpink,0.8);}
+    19% { opacity: .3; }
+    22% { opacity: 1; }
+    60% { opacity: 1; }
+    61% { opacity: 0; }
+    62% { opacity: 0; }
+    63% { opacity: .2; }
+    64% { opacity: 0; }
+    65% { opacity: 1; }
+    70% { opacity: 0.7; box-shadow: 0px 0px 0px 5px rgba(white,0.4), 0px 0px 5px 5px rgba(red,0.2), 0px 0px 1px 1px red inset, 0px 0px 15px 4px rgba(red,0.75);}
+    73% { opacity: 1; }
+    75% { opacity: .8; }
+    79% { opacity: 1; }
+    100% { opacity: 1; box-shadow: 0px 0px 0px 2px rgba(white,0.7), 0px 0px 5px 5px rgba(red,0.7), 0px 0px 10px 3px red inset, 0px 0px 15px 4px rgba(red,0.75);}
+}
+
+
+@keyframes flicker {
+    0% { opacity: .3; }
+
+    // flicker
+    2%  { opacity: .3; }
+    3% { opacity: 1; }
+    11% { opacity: .4; }
+    11.25% { opacity: .6; }
+    11.5% { opacity: .4; }
+    18% { opacity: 1; }
+    18.5% { opacity: .9; }
+    22% { opacity: 1; }
+
+    // flicker
+    38.5% { opacity: 1; }
+    39% { opacity: .8; }
+    42% { opacity: 1; }
+
+    // flicker
+    60% { opacity: 1; }
+    60.5% { opacity: .2; }
+    62% { opacity: .6; }
+    63% { opacity: .2; }
+    63.25% { opacity: .3; }
+    65% { opacity: 1; }
+
+    // flicker
+    73% { opacity: 1; }
+    75% { opacity: .8; }
+    79% { opacity: 1; }
+
+    100% { opacity: 1; }
+}
+
+
+.reveal-all {
+    position: absolute;
+    bottom: 0;
+    margin-right: 20%;
+    z-index: 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &__text {
+        position: absolute;
+        top: 34%;
+        font-family: SkyBold, sans-serif;
+        color: transparent;
+        text-shadow: 0 0 3px rgba(0,0,0,0.4), 1px 1px 1px rgba(255,255,255,0.6);
+        font-size: 8vw;
+        text-transform: uppercase;
+        margin: 0 auto;
+        opacity: 0.4;
+        animation: 3s 3s textFlicker forwards;
+
+        @media (min-width: 500px) {
+            top: 32%;
+            font-size: 42px;
+        }
+
+        span {
+            animation: textFlicker 2s forwards;
+        }
+
+        @for $i from 1 through 3 {
+            span:nth-child(#{$i}) {
+                animation-delay: $i * 1.7s;
+            }
+        }
+    }
+    &:hover {
+        .reveal-all__text {
+            text-shadow: 0 0 5px rgba(255,255,255,0.5),
+                0 0 2px rgba(black, 0.5),
+                0 0 10px rgba(red, 0.5),
+                0 0 15px rgba(255,255,255,0.9),
+                0 0 25px rgba(255,255,255,0.4);
+        }
+    }
+
+    svg {
+        padding: 20px;
+        width: 100%;
+    }
+
+    &__back {
+        fill: red;
+    }
+
+    &__neon-arrow {
+        fill: #f2d3d3;
+        stroke: orange;
+        stroke-width: 3px;
+        opacity: 0.3;
+        animation: flicker 3.3s 3s linear infinite;
+    }
+
+    &__arrow {
+        stroke: #50090b;
+        stroke-width: 15px;
+    }
+}
+
+@keyframes textFlicker {
+    0%   { opacity: 0; color: white; }
+    6% { opacity: 1; color: white; }
+    7%   { opacity: .9; color: white; }
+    17%  { opacity: .1; color: white; }
+    18%  { opacity: .6; color: white; }
+    19%  { opacity: .2; color: white; }
+    21%  { opacity: .8; color: white;}
+    22%  { opacity: 1; color: white;}
+    100%  { opacity: 1; color: white; }
+}
+
+
+
+// win stars coming in
+@mixin win-star {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/Vegas_Time__Cube_Star.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+@mixin win-star-shadow {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -5px;
+    bottom: -70px;
+    left: 5px;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/Vegas_Time__Cube_Star_Shadow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: 9;
+}
+
+.star-left-top {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+
+    &:before {
+        @include win-star-shadow();
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.star-right-top {
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    top: 15%;
+    right: -10%;
+
+    &:before {
+        @include win-star-shadow();
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.star-right-top-big {
+    width: 35%;
+    height: 45%;
+    position: absolute;
+    top: -60px;
+    right: -20px;
+
+    &:before {
+        @include win-star-shadow();
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.star-left-bottom-big {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    bottom: 20px;
+    left: -50px;
+
+    &:before {
+        @include win-star-shadow();
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.star-left-bottom {
+    width: 23%;
+    height: 23%;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+
+    &:before {
+        @include win-star-shadow();
+        top: 13px;
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.star-right-bottom {
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+
+    &:before {
+        @include win-star-shadow();
+    }
+    &:after {
+        @include win-star();
+    }
+}
+
+.done .cube--side.back {
+    font-size: 13vw;
+    color: white;
+    text-shadow: 0 0 3px white,
+            -1px 1px 1px black,
+            0 0 10px red,
+            0 0 15px rgba(255,255,255,0.6),
+            0 0 25px rgba(255, 255, 255, 0.2);
+
+        @media (min-width: 600px) {
+            font-size: 6rem;
+        }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 9%;
+        right: 9%;
+        bottom: 9%;
+        left: 9%;
+        background: #4f0a0d;
+        border-radius: 6px;
+        box-shadow: 0 0 30px black inset;
+    }
+
+    .winner {
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        margin: 20% auto 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fig {
+        position: relative;
+        z-index: 2;
+        margin: 0 auto 25%;
+        width: 100%;
+        text-align: center;
+    }
+}

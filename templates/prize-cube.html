@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Prize Cube</title>
+
+    <link rel="stylesheet" href="../assets/main.css">
+
+</head>
+<body class="prize-cube">
+    <div class="cog-one"></div>
+    <div class="cog-two"></div>
+    <div class="cog-three"></div>
+
+    <div class="game">
+        <div class="cube-wrap">
+            <div class="cube">
+                <div class="cube--side top"></div>
+                <div class="cube--side right">
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                </div>
+                <div class="cube--side bottom">Bottom</div>
+                <div class="cube--side left">
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                </div>
+                <div class="cube--side front">
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                    <div class="touch-cube"><span>£5</span></div>
+                </div>
+                <div class="cube--side back">
+                    <div class="star-left-top"></div>
+                    <div class="star-right-top-big"></div>
+                    <div class="star-right-top"></div>
+                    <div class="star-left-bottom-big"></div>
+                    <div class="star-left-bottom"></div>
+                    <div class="star-right-bottom"></div>
+                    <div class="winner">Winner</div>
+                    <div class="fig"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                    <div class="touch-cube"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="podium">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/Cube_Base.png" alt="">
+            <div class="reveal-all">
+        <div class="reveal-all__text">R<span>e</span>ve<span>a</span>l <span>A</span>ll</div>
+        <svg id="reveal-all" data-name="reveal-all" viewBox="0 0 504.89 300.06">
+            <defs>
+                <filter id="glow">
+                    <feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken" />
+                    <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
+                    <feFlood flood-color="#e86a2d" result="glowColor" />
+                    <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+
+                <radialGradient id="radGrad">
+                    <stop offset="30%" stop-color="#9b2c17"/>
+                    <stop offset="95%" stop-color="#61140a"/>
+                </radialGradient>
+            </defs>
+
+            <path class="reveal-all__arrow" fill="url(#radGrad)" filter="url(#glow)" d="M528.11,147.66l-161.94-117a9,9,0,0,0-14,9.39l11.94,49.52-326.93-13h-.36a9,9,0,0,0-8,13l33,65.33-33,62.93a9,9,0,0,0,8,13.15h.42l327-15.34-12,51.92a9,9,0,0,0,13.94,9.36L528,162.27a9,9,0,0,0,.07-14.62Z" transform="translate(-27.84 -25.6)"/>
+
+            <path class="reveal-all__neon-arrow" filter="url(#glow)" d="M361,37.78,523.16,154.94,361,269.7l14.74-63.56L36.51,222.05l35.15-67.11L36.51,85.4,375.75,98.93,361,37.78m0-8.68a8.68,8.68,0,0,0-8.44,10.71l12,50L36.86,76.73h-.35a8.68,8.68,0,0,0-7.74,12.59l33.14,65.55L28.83,218a8.68,8.68,0,0,0,7.69,12.71h.41L364.7,215.34l-12.15,52.39a8.68,8.68,0,0,0,13.47,9L528.17,162a8.68,8.68,0,0,0,.07-14.12L366.09,30.74A8.67,8.67,0,0,0,361,29.1Z" transform="translate(-27.84 -25.6)"/>
+        </svg>
+
+
+    </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/TweenMax.min.js"></script>
+    <script src="../assets/js/CustomEase.min.js"></script>
+    <script src="../assets/js/RoundPropsPlugin.min.js"></script>
+    <script src="../assets/js/prize-cube.js"></script>
+</body>
+</html>

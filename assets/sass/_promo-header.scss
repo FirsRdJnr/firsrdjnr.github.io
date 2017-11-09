@@ -1,0 +1,79 @@
+.promoHero {
+    width: 100%;
+    padding: 20px 0;
+    // will be replaced with an image
+    background: radial-gradient(ellipse at center, $color--primary 0%, $color--shadow 100%);
+
+    &__wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+
+        @media only screen and (min-width: 700px) {
+            flex-wrap: nowrap;
+        }
+
+        @include fixed-width-limit();
+    }
+
+    &__yourin {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+
+        @media only screen and (min-width: 700px) {
+            right: 0;width:auto;
+        }
+        @include media-query(xs-s) {
+            justify-content: center;
+        }
+        .promoStatus {
+            background: green;
+            display: inline;
+            padding: 3px 6px;
+            font-size: 11px ;
+        }
+    }
+
+    &__img,
+    &__content {
+        width: 100%;
+
+        @media only screen and (min-width: 700px) {
+            width: 50%;
+        }
+    }
+
+    &__img {
+        align-self: center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    &--header {
+        margin: 0;
+    }
+
+    &__keyterms {
+        a {
+            color: white;
+        }
+    }
+}
+
+
+.hide {
+    display: none;
+}

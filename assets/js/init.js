@@ -61,6 +61,16 @@ $(document).ready(function(){
     //
     // }, 'text');
 
+    $('.promotion-hero__cta').on('click', function() {
+        $('.promotion-hero__wagering').removeClass('hide');
+        $('.promotion-hero__cta, .promotion-hero--sub').addClass('hide')
+    })
+
+    $('.promotion-hero__keyterms').on('click', function() {
+        $('.promotion-hero__wagering').addClass('hide');
+        $('.promotion-hero__cta, .promotion-hero--sub').removeClass('hide')
+    })
+
 });
 
 $(window).resize(function() {

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>SANDBOX</title>
+
+    <link rel="stylesheet" href="/assets/main.css">
+
+</head>
+<body>
+
+<aside>
+    <nav>
+        <ul class="global-nav__list">
+            <li class="global-nav__list--item"><a href="/new" data-track-category="navbar"><i class="icon" data-icon=""></i><span>New</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/top-30" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Top 30</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item global-nav__list--new"><a href="/jade-room" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Jade Collection</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/jackpots" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Jackpots</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/roulette" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Roulette</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/blackjack" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Blackjack</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/table-games" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Table Games</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/instant-win" data-track-category="navbar"><i class="icon" data-icon=""></i><span>Instant Win</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+            <li class="global-nav__list--item"><a href="/html5" data-track-category="navbar"><i class="icon" data-icon=""></i><span>HTML5</span><i class="icon  arrow  hide-desk" data-icon=""></i></a></li>
+        </ul>
+        <button class="mobile-nav">CLOSE NAV</button>
+    </nav>
+</aside>
+
+<main style="display: flex; align-items: center;">
+
+
+    <div class="newcalc">
+        <div class="newcalc__segment deposit">
+            <p class="newcalc__title">You deposit:</p>
+            <div class="newcalc__input">
+                <div class="newcalc__controls  left">-</div>
+                <input type="text" class="newcalc__amount  newcalc__amount--coloured" maxlength="8" value="£10" id="depositVal">
+                <div class="newcalc__controls  right">+</div>
+            </div>
+        </div>
+        <div class="newcalc__segment give">
+            <p class="newcalc__title">We give:</p>
+            <div class="newcalc__amount">
+                <div class="newcalc__marker"></div>
+                <span>£10</span>
+            <div class="newcalc__error hide">deposit match £100 reached!</div>
+            </div>
+        </div>
+        <div class="newcalc__segment play">
+            <p class="newcalc__title">Play with:</p>
+            <div class="newcalc__amount">£20</div>
+        </div>
+    </div>
+
+
+</main>
+
+<footer id="footernew">
+</footer>
+
+
+    <script src="node_modules/gulp-mustache/node_modules/mustache/mustache.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/js/init.js"></script>
+    <script src="assets/js/promocalc.js"></script>
+</body>
+</html>
