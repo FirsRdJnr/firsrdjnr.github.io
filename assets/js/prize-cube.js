@@ -37,8 +37,8 @@ $('.touch-cube').click(function() {
     }
 })
 
-var docW = window.innerWidth * 2,
-    docH = window.innerHeight * 2;
+var offDocW = window.innerWidth * 2,
+    offDocH = window.innerHeight * 2;
 
 var cube = '.cube',
     banner = '.banner',
@@ -49,12 +49,12 @@ var cube = '.cube',
 var tl = new TimelineLite()
 
 TweenMax.set(cube, {rotationY:0, rotationX:5});
-TweenMax.set(reveal, {y: docH, x:-docW, rotation: -40});
+TweenMax.set(reveal, {y: offDocH, x:-offDocW, rotation: -40});
 
 // spin cude
 tl.to(cube, 1.4, {rotationY:-720, ease:CustomEase.create("custom", easeBounce)});
 tl.to(cube, 1.4, {rotationX:0}, '-=1.4');
-tl.to(reveal, .4, {y: 0, x: 0, rotation: -5, ease:CustomEase.create("custom", easeBounce)}, 3);
+tl.to(reveal, .5, {y: 0, x: 0, rotation: -5}, 3);
 
 
 // add win stars
@@ -70,20 +70,19 @@ var starTL = '.star-left-top',
     gamePlay = '.game',
     cta = '.prize-cube__cta';
 
-
 var starTl = new TimelineLite({paused:true});
 
-TweenMax.set(starTL, {y: -docH, x:-docW, rotation: -40});
-TweenMax.set(starRTB, {y: -docH, x:docW, rotation: -60});
-TweenMax.set(starRT, {y: -docH, x:docW, rotation: 0});
-TweenMax.set(starLBB, {y: docH, x:-docW, rotation: -60});
-TweenMax.set(starLB, {y: docH, x:-docW, rotation: 0});
-TweenMax.set(starRB, {y: docH, x:docW, rotation: -40});
+TweenMax.set(starTL, {y: -offDocH, x:-offDocW, rotation: -40});
+TweenMax.set(starRTB, {y: -offDocH, x:offDocW, rotation: -60});
+TweenMax.set(starRT, {y: -offDocH, x:offDocW, rotation: 0});
+TweenMax.set(starLBB, {y: offDocH, x:-offDocW, rotation: -60});
+TweenMax.set(starLB, {y: offDocH, x:-offDocW, rotation: 0});
+TweenMax.set(starRB, {y: offDocH, x:offDocW, rotation: -40});
 TweenMax.set(winner, {opacity: 0});
-TweenMax.set(cta, {x:docW});
+TweenMax.set(cta, {x:offDocW});
 
 starTl.to(cube, 1.4, {rotationY:540, ease:CustomEase.create("custom", easeBounce)}, 1);
-starTl.to(reveal, .6, {y: docH, x: docW, rotation: 120, ease:CustomEase.create("custom", easeBounce)}, '-=1.3');
+starTl.to(reveal, .6, {y: offDocH/2, x: offDocW*2, rotation: 120, ease:CustomEase.create("custom", easeBounce)}, '-=1.3');
 starTl.to(winner, 1.4, {opacity: 1, ease:CustomEase.create("custom", easeFlick)}, 1.5);
 starTl.to(starTL, .4, {y: 0, x: 0, rotation: 340, ease:CustomEase.create("custom", easeBounce)}, 2.6);
 starTl.to(starRTB, .4, {y: 0, x: 0, rotation: 370, ease:CustomEase.create("custom", easeBounce)}, '-=.3');
@@ -98,12 +97,12 @@ function updateHandler() {
     winDisplay.innerHTML = winAmount.fig;
 }
 
-starTl.to(gamePlay, .2, {x:-docW}, 6);
+starTl.to(gamePlay, .2, {x:-offDocW}, 6);
 // spin stars off before stage moves
-starTl.to(starTL, .3, {y: -docH, x:-docW, rotation: -40, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
-starTl.to(starRTB, .3, {y: -docH, x:docW, rotation: -60, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
-starTl.to(starRT, .3, {y: -docH, x:docW, rotation: 0, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
-starTl.to(starLBB, .3, {y: docH, x:-docW, rotation: -60, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
-starTl.to(starLB, .3, {y: docH, x:-docW, rotation: 0, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
-starTl.to(starRB, .3, {y: docH, x:docW, rotation: -40, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starTL, .3, {y: -offDocH, x:-offDocW, rotation: -40, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starRTB, .3, {y: -offDocH, x:offDocW, rotation: -60, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starRT, .3, {y: -offDocH, x:offDocW, rotation: 0, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starLBB, .3, {y: offDocH, x:-offDocW, rotation: -60, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starLB, .3, {y: offDocH, x:-offDocW, rotation: 0, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
+starTl.to(starRB, .3, {y: offDocH, x:offDocW, rotation: -40, ease:CustomEase.create("custom", easeBounce)}, '-=.6');
 starTl.to(cta, .3, {x:0,  ease:CustomEase.create("custom", easeBounce)}, '-=.2');
