@@ -9,6 +9,7 @@ body.prize-cube {
     justify-content: center;
     min-height: 100vh;
     font-family: SkyBold;
+    overflow: hidden;
 
     * {
         box-sizing: border-box;
@@ -551,5 +552,93 @@ body.prize-cube {
         margin: 0 auto 25%;
         width: 100%;
         text-align: center;
+    }
+}
+
+.prize-cube__cta {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        text-transform: uppercase;
+        color: #e4c100;
+
+        &.amount {
+            font-size: 4rem;
+            color: white;
+            margin: 0 0 10px;
+        }
+    }
+
+    &--wrap {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50vw);
+        box-shadow: 0 90px 170px black, 0 -80px 50px black inset;
+
+        @media only screen and (min-width: 500px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 25vw);
+        }
+
+        @media only screen and (min-width: 800px) {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 20vw);
+        }
+
+        @media only screen and (min-width: 1024px) {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 170.666px);
+        }
+    }
+
+    &--game {
+        position: relative;
+        grid-column: span 1;
+        grid-row: span 1;
+
+        &--img {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        // creating different tile sizes
+        // 1x1, 2x2, 2x1, 1x2
+        &.onetwo {
+            @media only screen and (min-width: 1024px) {
+                grid-column: span 1;
+                grid-row: span 2;
+            }
+        }
+
+        &.twotwo {
+            @media only screen and (min-width: 800px) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+        }
+
+        &.twoone {
+            @media only screen and (min-width: 1024px) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+        }
+    }
+
+    p, a {
+        color: white;
+        font-family: SkyRegular;
+        margin-top: 50px;
     }
 }

@@ -3457,7 +3457,8 @@ body.prize-cube {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100vh;
-  font-family: SkyBold; }
+  font-family: SkyBold;
+  overflow: hidden; }
   body.prize-cube * {
     box-sizing: border-box; }
 
@@ -4207,6 +4208,84 @@ body.prize-cube {
     margin: 0 auto 25%;
     width: 100%;
     text-align: center; }
+
+.prize-cube__cta {
+  position: absolute;
+  width: 100%;
+  text-align: center; }
+  .prize-cube__cta h1 {
+    text-transform: uppercase;
+    color: #e4c100; }
+    .prize-cube__cta h1.amount {
+      font-size: 4rem;
+      color: white;
+      margin: 0 0 10px; }
+  .prize-cube__cta--wrap {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (50vw)[2];
+        grid-template-rows: repeat(2, 50vw);
+    box-shadow: 0 90px 170px black, 0 -80px 50px black inset; }
+    @media only screen and (min-width: 500px) {
+      .prize-cube__cta--wrap {
+        -ms-grid-columns: (1fr)[2];
+            grid-template-columns: repeat(2, 1fr);
+        -ms-grid-rows: (25vw)[3];
+            grid-template-rows: repeat(3, 25vw); } }
+    @media only screen and (min-width: 800px) {
+      .prize-cube__cta--wrap {
+        -ms-grid-columns: (1fr)[5];
+            grid-template-columns: repeat(5, 1fr);
+        -ms-grid-rows: (20vw)[2];
+            grid-template-rows: repeat(2, 20vw); } }
+    @media only screen and (min-width: 1024px) {
+      .prize-cube__cta--wrap {
+        -ms-grid-columns: (1fr)[6];
+            grid-template-columns: repeat(6, 1fr);
+        -ms-grid-rows: (170.666px)[2];
+            grid-template-rows: repeat(2, 170.666px); } }
+  .prize-cube__cta--game {
+    position: relative;
+    -ms-grid-column: span 1;
+        grid-column: span 1;
+    -ms-grid-row: span 1;
+        grid-row: span 1; }
+    .prize-cube__cta--game--img {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+    @media only screen and (min-width: 1024px) {
+      .prize-cube__cta--game.onetwo {
+        -ms-grid-column: span 1;
+            grid-column: span 1;
+        -ms-grid-row: span 2;
+            grid-row: span 2; } }
+    @media only screen and (min-width: 800px) {
+      .prize-cube__cta--game.twotwo {
+        -ms-grid-column: span 2;
+            grid-column: span 2;
+        -ms-grid-row: span 2;
+            grid-row: span 2; } }
+    @media only screen and (min-width: 1024px) {
+      .prize-cube__cta--game.twoone {
+        -ms-grid-column: span 2;
+            grid-column: span 2;
+        -ms-grid-row: span 1;
+            grid-row: span 1; } }
+  .prize-cube__cta p, .prize-cube__cta a {
+    color: white;
+    font-family: SkyRegular;
+    margin-top: 50px; }
 
 html {
   font-family: "SkyRegular", Arial, Verdana, sans-serif; }
