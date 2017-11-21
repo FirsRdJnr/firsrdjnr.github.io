@@ -205,13 +205,6 @@ body.prize-cube {
                     filter: none;
                 }
             }
-
-            .back {
-
-                .touch-cube {
-                    display: none;
-                }
-            }
         }
 
     }
@@ -544,18 +537,6 @@ body.prize-cube {
         @media (min-width: 600px) {
             font-size: 6rem;
         }
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 9%;
-        right: 9%;
-        bottom: 9%;
-        left: 9%;
-        background: #4f0a0d;
-        border-radius: 6px;
-        box-shadow: 0 0 30px black inset;
-    }
 
     .winner {
         position: relative;

@@ -110,8 +110,8 @@ TweenMax.set(starRB, {y: docH, x:docW, rotation: -40});
 TweenMax.set(winner, {opacity: 0});
 TweenMax.set(cta, {x:docW});
 
-starTl.to(cube, 1.4, {rotationY:540, ease:CustomEase.create("custom", easeBounce)}, 1);
-starTl.to(reveal, .6, {y: docH, x: docW, rotation: 120, ease:CustomEase.create("custom", easeBounce)}, '-=1.3');
+starTl.to(cube, 1, {rotationY:180, ease:CustomEase.create("custom", easeBounce)}, 1);
+starTl.to(reveal, .6, {y: docH}, '-=1.3');
 starTl.to(winner, 1.4, {opacity: 1, ease:CustomEase.create("custom", easeFlick)}, 1.5);
 starTl.to(starTL, .4, {y: 0, x: 0, rotation: 340, ease:CustomEase.create("custom", easeBounce)}, 2.6);
 starTl.to(starRTB, .4, {y: 0, x: 0, rotation: 370, ease:CustomEase.create("custom", easeBounce)}, '-=.3');
