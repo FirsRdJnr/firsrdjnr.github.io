@@ -3438,6 +3438,154 @@ body.game-info h2, body.game-info h3 {
   width: 100%;
   height: 100%; }
 
+.prize-cube__video {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: white;
+  height: 100vh;
+  z-index: 3;
+  transition: all 1s ease-in-out; }
+  .prize-cube__video.done {
+    -webkit-filter: blur(30px);
+            filter: blur(30px); }
+  .prize-cube__video.hide {
+    display: none; }
+
+.prize-cube__play {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 6;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .prize-cube__play .logo {
+    background-image: url("../assets/img/logo-prize-cube.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    padding-bottom: 60%; }
+    @media only screen and (min-width: 600px) {
+      .prize-cube__play .logo {
+        width: 60%;
+        padding-bottom: 30%; } }
+  .prize-cube__play h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    max-width: 600px;
+    padding: 0;
+    margin: 0 1rem 1rem;
+    text-align: center; }
+    @media only screen and (min-width: 600px) {
+      .prize-cube__play h1 {
+        font-size: 4vw; } }
+  .prize-cube__play .button {
+    color: #da0800;
+    background: #ffd414;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px 40px;
+    text-decoration: none;
+    border-radius: 5px; }
+  .prize-cube__play.hide {
+    display: none; }
+
+.prize-cube__loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #Fff;
+  top: 50%;
+  -webkit-animation: loader 2s infinite ease;
+          animation: loader 2s infinite ease; }
+
+.prize-cube__loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  -webkit-animation: loader-inner 2s infinite ease-in;
+          animation: loader-inner 2s infinite ease-in; }
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%; }
+  25% {
+    height: 0%; }
+  50% {
+    height: 100%; }
+  75% {
+    height: 100%; }
+  100% {
+    height: 0%; } }
+
+@keyframes loader-inner {
+  0% {
+    height: 0%; }
+  25% {
+    height: 0%; }
+  50% {
+    height: 100%; }
+  75% {
+    height: 100%; }
+  100% {
+    height: 0%; } }
+
 body.prize-cube {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/128863/bg-cube-red-world-front.jpg");
   background-repeat: no-repeat;
@@ -3508,6 +3656,8 @@ body.prize-cube {
           flex-wrap: wrap;
       padding: 10%; }
       .cube-wrap .cube--side .touch-cube {
+        display: none; }
+      .cube-wrap .cube--side.showCubies .touch-cube {
         position: relative;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -3523,7 +3673,7 @@ body.prize-cube {
         box-sizing: border-box;
         margin: 6px;
         cursor: pointer; }
-        .cube-wrap .cube--side .touch-cube span {
+        .cube-wrap .cube--side.showCubies .touch-cube span {
           display: block;
           position: relative;
           z-index: 3;
@@ -3535,7 +3685,7 @@ body.prize-cube {
           opacity: 0;
           transition: all .2s ease-in-out;
           transition-delay: .7s; }
-        .cube-wrap .cube--side .touch-cube:before, .cube-wrap .cube--side .touch-cube:after {
+        .cube-wrap .cube--side.showCubies .touch-cube:before, .cube-wrap .cube--side.showCubies .touch-cube:after {
           content: "";
           position: absolute;
           top: 0;
@@ -3543,80 +3693,108 @@ body.prize-cube {
           bottom: 0;
           left: 0;
           border-radius: 10px; }
-        .cube-wrap .cube--side .touch-cube:before {
-          background: radial-gradient(ellipse at center, #880f13 0%, #610a0d 100%);
-          transition: all .2s ease-in-out; }
-        .cube-wrap .cube--side .touch-cube:after {
-          -webkit-animation: clickCubeGlow 1s ease;
-                  animation: clickCubeGlow 1s ease;
+        .cube-wrap .cube--side.showCubies .touch-cube:before {
+          transition: all .2s ease-in-out;
+          -webkit-animation: showCubies .1s ease forwards;
+                  animation: showCubies .1s ease forwards; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(1):before {
+          -webkit-animation-delay: 0.1s;
+                  animation-delay: 0.1s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(2):before {
+          -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(3):before {
+          -webkit-animation-delay: 0.3s;
+                  animation-delay: 0.3s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(4):before {
+          -webkit-animation-delay: 0.4s;
+                  animation-delay: 0.4s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(5):before {
+          -webkit-animation-delay: 0.5s;
+                  animation-delay: 0.5s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(6):before {
+          -webkit-animation-delay: 0.6s;
+                  animation-delay: 0.6s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(7):before {
+          -webkit-animation-delay: 0.7s;
+                  animation-delay: 0.7s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(8):before {
+          -webkit-animation-delay: 0.8s;
+                  animation-delay: 0.8s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(9):before {
+          -webkit-animation-delay: 0.9s;
+                  animation-delay: 0.9s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:after {
+          -webkit-animation: clickCubeGlow .5s ease;
+                  animation: clickCubeGlow .5s ease;
           -webkit-animation-fill-mode: forwards;
                   animation-fill-mode: forwards; }
-        .cube-wrap .cube--side .touch-cube:nth-child(1):after {
-          -webkit-animation-delay: 1.6s;
-                  animation-delay: 1.6s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(2):after {
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(1):after {
+          -webkit-animation-delay: 1s;
+                  animation-delay: 1s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(2):after {
+          -webkit-animation-delay: 1.2s;
+                  animation-delay: 1.2s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(3):after {
+          -webkit-animation-delay: 1.4s;
+                  animation-delay: 1.4s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(4):after {
+          -webkit-animation-delay: 1.5s;
+                  animation-delay: 1.5s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(5):after {
+          -webkit-animation-delay: 1.7s;
+                  animation-delay: 1.7s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(6):after {
           -webkit-animation-delay: 1.8s;
                   animation-delay: 1.8s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(3):after {
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(7):after {
+          -webkit-animation-delay: 1.8s;
+                  animation-delay: 1.8s; }
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(8):after {
           -webkit-animation-delay: 2s;
                   animation-delay: 2s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(4):after {
-          -webkit-animation-delay: 2.1s;
-                  animation-delay: 2.1s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(5):after {
-          -webkit-animation-delay: 2.3s;
-                  animation-delay: 2.3s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(6):after {
-          -webkit-animation-delay: 2.5s;
-                  animation-delay: 2.5s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(7):after {
-          -webkit-animation-delay: 2.6s;
-                  animation-delay: 2.6s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(8):after {
-          -webkit-animation-delay: 2.8s;
-                  animation-delay: 2.8s; }
-        .cube-wrap .cube--side .touch-cube:nth-child(9):after {
-          -webkit-animation-delay: 3s;
-                  animation-delay: 3s; }
-        .cube-wrap .cube--side .touch-cube.flicker:after {
+        .cube-wrap .cube--side.showCubies .touch-cube:nth-child(9):after {
+          -webkit-animation-delay: 2.4s;
+                  animation-delay: 2.4s; }
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:after {
           -webkit-animation: clickCubeGlow 1s ease forwards, flicker 7.3s linear infinite;
                   animation: clickCubeGlow 1s ease forwards, flicker 7.3s linear infinite; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(1):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(1):after {
           -webkit-animation-delay: 1.8s, 1s;
                   animation-delay: 1.8s, 1s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(2):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(2):after {
           -webkit-animation-delay: 1.8s, 2s;
                   animation-delay: 1.8s, 2s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(3):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(3):after {
           -webkit-animation-delay: 1.8s, 3s;
                   animation-delay: 1.8s, 3s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(4):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(4):after {
           -webkit-animation-delay: 1.8s, 4s;
                   animation-delay: 1.8s, 4s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(5):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(5):after {
           -webkit-animation-delay: 1.8s, 5s;
                   animation-delay: 1.8s, 5s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(6):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(6):after {
           -webkit-animation-delay: 1.8s, 6s;
                   animation-delay: 1.8s, 6s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(7):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(7):after {
           -webkit-animation-delay: 1.8s, 7s;
                   animation-delay: 1.8s, 7s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(8):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(8):after {
           -webkit-animation-delay: 1.8s, 8s;
                   animation-delay: 1.8s, 8s; }
-        .cube-wrap .cube--side .touch-cube.flicker:nth-child(9):after {
+        .cube-wrap .cube--side.showCubies .touch-cube.flicker:nth-child(9):after {
           -webkit-animation-delay: 1.8s, 9s;
                   animation-delay: 1.8s, 9s; }
-        .cube-wrap .cube--side .touch-cube:hover:before {
+        .cube-wrap .cube--side.showCubies .touch-cube:hover:before {
           background: radial-gradient(ellipse at center, #610a0d 0%, #430407 100%);
           -webkit-filter: brightness(15) hue-rotate(50deg) contrast(2);
                   filter: brightness(15) hue-rotate(50deg) contrast(2);
           box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.1) inset; }
-        .cube-wrap .cube--side .touch-cube.clicked:before {
+        .cube-wrap .cube--side.showCubies .touch-cube.clicked:before {
           -webkit-animation: clicked .8s ease forwards;
                   animation: clicked .8s ease forwards; }
-        .cube-wrap .cube--side .touch-cube.clicked span {
+        .cube-wrap .cube--side.showCubies .touch-cube.clicked span {
           opacity: 1; }
     .cube-wrap .cube.done {
       -webkit-animation: spinDone 1.4s 2s cubic-bezier(0.42, 0, 0.51, 1.5) forwards;
@@ -3654,6 +3832,22 @@ body.prize-cube {
 .cube div.back {
   -webkit-transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
           transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg); }
+
+@-webkit-keyframes showCubies {
+  0% {
+    opacity: 0;
+    background: transparent; }
+  100% {
+    opacity: 1;
+    background: radial-gradient(ellipse at center, #880f13 0%, #610a0d 100%); } }
+
+@keyframes showCubies {
+  0% {
+    opacity: 0;
+    background: transparent; }
+  100% {
+    opacity: 1;
+    background: radial-gradient(ellipse at center, #880f13 0%, #610a0d 100%); } }
 
 @-webkit-keyframes clicked {
   0% {
@@ -4286,6 +4480,10 @@ body.prize-cube {
     color: white;
     font-family: SkyRegular;
     margin-top: 50px; }
+  .prize-cube__cta h4 {
+    color: white;
+    font-size: 1.6rem;
+    font-family: "SkyRegular", Arial, Verdana, sans-serif; }
 
 html {
   font-family: "SkyRegular", Arial, Verdana, sans-serif; }
