@@ -1,110 +1,110 @@
 
 skeleton.png
-size: 4615,1667
+size: 3025,3023
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Assets/ball back
   rotate: true
-  xy: 4593, 1419
+  xy: 2985, 2298
   size: 246, 13
   orig: 246, 13
   offset: 0, 0
   index: -1
 Assets/free_spins_icon
   rotate: true
-  xy: 2, 616
+  xy: 1493, 896
   size: 572, 513
   orig: 572, 513
   offset: 0, 0
   index: -1
 Assets/grabber_ball_bottom
   rotate: false
-  xy: 4367, 472
+  xy: 1493, 771
   size: 246, 123
   orig: 246, 123
   offset: 0, 0
   index: -1
 Assets/grabber_ball_reflection
   rotate: false
-  xy: 517, 1135
+  xy: 217, 177
   size: 284, 53
   orig: 752, 84
   offset: 232, 12
   index: -1
 Assets/grabber_ball_star
   rotate: false
-  xy: 4152, 522
+  xy: 2, 27
   size: 213, 203
   orig: 213, 203
   offset: 0, 0
   index: -1
 Assets/grabber_ball_top
   rotate: false
-  xy: 4367, 597
+  xy: 1052, 392
   size: 246, 128
   orig: 246, 128
   offset: 0, 0
   index: -1
 Assets/grabber_pit_rim_back
   rotate: false
-  xy: 3018, 43
+  xy: 2, 232
   size: 1342, 152
   orig: 1454, 302
   offset: 58, 0
   index: -1
 Assets/grabber_pit_rim_front
-  rotate: false
-  xy: 3018, 197
+  rotate: true
+  xy: 2809, 1094
   size: 1450, 174
   orig: 1450, 174
   offset: 0, 0
   index: -1
 Assets/grabber_pit_stairs
   rotate: true
-  xy: 4152, 727
+  xy: 1052, 522
   size: 938, 439
   orig: 938, 439
   offset: 0, 0
   index: -1
 Assets/star_rotate_00
   rotate: false
-  xy: 3025, 583
+  xy: 2, 1462
   size: 1125, 1082
   orig: 1125, 1082
   offset: 0, 0
   index: -1
 Assets/star_rotate_01
   rotate: false
-  xy: 1079, 114
+  xy: 2, 386
   size: 1048, 1074
   orig: 1048, 1074
   offset: 0, 0
   index: -1
 Assets/star_rotate_02
   rotate: false
-  xy: 2129, 114
+  xy: 1129, 1470
   size: 887, 1074
   orig: 887, 1074
   offset: 0, 0
   index: -1
 Assets/star_rotate_03
-  rotate: true
-  xy: 2, 2
+  rotate: false
+  xy: 2018, 1469
   size: 579, 1075
   orig: 579, 1075
   offset: 0, 0
   index: -1
 Assets/star_rotate_04
-  rotate: true
-  xy: 3018, 373
+  rotate: false
+  xy: 2599, 1476
   size: 208, 1068
   orig: 208, 1068
   offset: 0, 0
   index: -1
 Assets/you_win
   rotate: false
-  xy: 2, 1190
+  xy: 2, 2546
   size: 3021, 475
   orig: 3021, 475
   offset: 0, 0

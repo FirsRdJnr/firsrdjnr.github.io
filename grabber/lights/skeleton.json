@@ -1,0 +1,218 @@
+{
+"skeleton": { "hash": "PMZ5GQ9uP0Sb1Jqz1crlro2LkNE", "spine": "3.6.53", "width": 429.02, "height": 294.05, "images": "./Button Project/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Pipe", "bone": "root", "attachment": "Pipe" },
+	{ "name": "button 2", "bone": "root", "attachment": "button 2" },
+	{ "name": "Light Bulb", "bone": "root", "attachment": "Unlit Bulb" },
+	{ "name": "Light Bulb2", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb3", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb11", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb12", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb13", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb14", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb15", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb16", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb4", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb5", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb6", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb7", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb8", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb9", "bone": "root", "attachment": "Light Bulb" },
+	{ "name": "Light Bulb10", "bone": "root", "attachment": "Light Bulb" }
+],
+"skins": {
+	"default": {
+		"Light Bulb": {
+			"Light Bulb": { "y": 123.17, "width": 52, "height": 53 },
+			"Unlit Bulb": { "y": 123.2, "width": 28, "height": 27 }
+		},
+		"Light Bulb10": {
+			"Light Bulb": { "x": 47.84, "y": 113.73, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 47.84, "y": 113.7, "width": 28, "height": 27 }
+		},
+		"Light Bulb11": {
+			"Light Bulb": { "x": 112.02, "y": -50.67, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 112, "y": -50.67, "width": 28, "height": 27 }
+		},
+		"Light Bulb12": {
+			"Light Bulb": { "x": -113.18, "y": -49.54, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -113.2, "y": -49.54, "width": 28, "height": 27 }
+		},
+		"Light Bulb13": {
+			"Light Bulb": { "x": -86.16, "y": -90.08, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -86.18, "y": -90.08, "width": 28, "height": 27 }
+		},
+		"Light Bulb14": {
+			"Light Bulb": { "x": 83.87, "y": -90.08, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 83.87, "y": -90.08, "width": 28, "height": 27 }
+		},
+		"Light Bulb15": {
+			"Light Bulb": { "x": 45.59, "y": -113.73, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 45.59, "y": -113.7, "width": 28, "height": 27 }
+		},
+		"Light Bulb16": {
+			"Light Bulb": { "x": -44.49, "y": -113.73, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -44.49, "y": -113.7, "width": 28, "height": 27 }
+		},
+		"Light Bulb2": {
+			"Light Bulb": { "y": -124.05, "width": 52, "height": 53 },
+			"Unlit Bulb": { "y": -124.1, "width": 28, "height": 27 }
+		},
+		"Light Bulb3": {
+			"Light Bulb": { "x": 123.28, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 123.3, "width": 28, "height": 27 }
+		},
+		"Light Bulb4": {
+			"Light Bulb": { "x": -123.31, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -123.3, "width": 28, "height": 27 }
+		},
+		"Light Bulb5": {
+			"Light Bulb": { "x": -114.31, "y": 47.29, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -114.3, "y": 47.29, "width": 28, "height": 27 }
+		},
+		"Light Bulb6": {
+			"Light Bulb": { "x": 114.27, "y": 47.29, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 114.3, "y": 47.29, "width": 28, "height": 27 }
+		},
+		"Light Bulb7": {
+			"Light Bulb": { "x": 86.12, "y": 87.83, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": 86.12, "y": 87.83, "width": 28, "height": 27 }
+		},
+		"Light Bulb8": {
+			"Light Bulb": { "x": -86.16, "y": 87.83, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -86.16, "y": 87.83, "width": 28, "height": 27 }
+		},
+		"Light Bulb9": {
+			"Light Bulb": { "x": -46.75, "y": 113.73, "width": 52, "height": 53 },
+			"Unlit Bulb": { "x": -46.75, "y": 113.7, "width": 28, "height": 27 }
+		},
+		"Pipe": {
+			"Pipe": { "x": 67.7, "width": 424, "height": 287 }
+		},
+		"button 2": {
+			"button 2": { "x": 1.18, "y": 1, "width": 202, "height": 200 }
+		}
+	}
+},
+"animations": {
+	"grabber_button_lights": {
+		"slots": {
+			"Light Bulb": {
+				"attachment": [
+					{ "time": 0, "name": "Unlit Bulb" },
+					{ "time": 0.1, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb2": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.8, "name": "Unlit Bulb" },
+					{ "time": 0.9, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb3": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.4, "name": "Unlit Bulb" },
+					{ "time": 0.5, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb4": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1.2, "name": "Unlit Bulb" },
+					{ "time": 1.3, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb5": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1.3, "name": "Unlit Bulb" },
+					{ "time": 1.4, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb6": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.3, "name": "Unlit Bulb" },
+					{ "time": 0.4, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb7": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.2, "name": "Unlit Bulb" },
+					{ "time": 0.3, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb8": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1.4, "name": "Unlit Bulb" },
+					{ "time": 1.5, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb9": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1.5, "name": "Unlit Bulb" },
+					{ "time": 1.6, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb10": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.1, "name": "Unlit Bulb" },
+					{ "time": 0.2, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb11": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.5, "name": "Unlit Bulb" },
+					{ "time": 0.6, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb12": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1.1, "name": "Unlit Bulb" },
+					{ "time": 1.2, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb13": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 1, "name": "Unlit Bulb" },
+					{ "time": 1.1, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb14": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.6, "name": "Unlit Bulb" },
+					{ "time": 0.7, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb15": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.7, "name": "Unlit Bulb" },
+					{ "time": 0.8, "name": "Light Bulb" }
+				]
+			},
+			"Light Bulb16": {
+				"attachment": [
+					{ "time": 0, "name": "Light Bulb" },
+					{ "time": 0.9, "name": "Unlit Bulb" },
+					{ "time": 1, "name": "Light Bulb" }
+				]
+			}
+		}
+	},
+	"grabber_button_still": {}
+}
+}

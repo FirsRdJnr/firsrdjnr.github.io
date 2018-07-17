@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "RZUE1xcpgwM8+VvlaIm5cE1k85I", "spine": "3.7.19-beta", "width": 3021, "height": 3953.1 },
+"skeleton": { "hash": "NTfqsJqmEjwQ9NUg47wC9uqm+6E", "spine": "3.7.19-beta", "width": 3021, "height": 3953.1 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Stairs", "parent": "root" },
@@ -5817,7 +5817,7 @@
 			},
 			"Assets/you_win": {
 				"attachment": [
-					{ "time": 0, "name": "Assets/you_win" },
+					{ "time": 0, "name": null },
 					{ "time": 0.2, "name": "Assets/you_win" }
 				]
 			}
