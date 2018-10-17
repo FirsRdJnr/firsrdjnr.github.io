@@ -1,0 +1,33 @@
+{
+	"meta": {
+		"image": "spritesheet.png",
+		"size": {"w":496,"h":250},
+		"scale": "1"
+	},
+	"frames": {
+		"ball_bottom.png":
+		{
+			"frame": {"x":0,"y":0,"w":250,"h":125},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":250,"h":125},
+			"sourceSize": {"w":250,"h":125}
+		},
+		"ball_top.png":
+		{
+			"frame": {"x":0,"y":125,"w":250,"h":125},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":250,"h":125},
+			"sourceSize": {"w":250,"h":125}
+		},
+		"ball_background.png":
+		{
+			"frame": {"x":250,"y":0,"w":246,"h":246},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":246,"h":246},
+			"sourceSize": {"w":246,"h":246}
+		}
+	}
+}

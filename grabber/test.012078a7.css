@@ -1,0 +1,90 @@
+body {
+  padding: 0;
+  background: black; }
+
+.menuList {
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10%; }
+
+.app {
+  position: static;
+  width: 100%;
+  height: 100%;
+  padding: 0 2vh;
+  padding-bottom: 5vh;
+  background-image: url(assets/background.png);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-size: auto 100%; }
+
+.grabber {
+  display: flex; }
+
+.grabber_game {
+  position: absolute;
+  display: table;
+  width: 100%;
+  width: 100%;
+  margin: 0 auto; }
+  .grabber_game canvas {
+    display: block;
+    width: 100%;
+    max-width: 100vh;
+    max-height: 100vh;
+    margin-right: auto;
+    margin-left: auto; }
+
+.grabber_buttons {
+  position: absolute;
+  right: -2px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  height: 100%;
+  margin-right: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center; }
+
+.grabber_button {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 400ms all ease-out;
+  transform: translateX(200px) translateY(0px);
+  border: 0;
+  outline: none; }
+
+.grabber_buttons--grab {
+  width: 130px;
+  height: 130px;
+  background: url(assets/buttons/grab.png);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.grabber_buttons--skip {
+  width: 80px;
+  height: 80px;
+  background: url(assets/buttons/skip.png);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+@media (max-aspect-ratio: 10 / 8) {
+  .grabber_buttons {
+    bottom: 0;
+    flex-direction: row;
+    width: 100%;
+    height: auto; }
+  .grabber_buttons--grab {
+    transform: translateX(0px) translateY(200px); }
+  .grabber_buttons--skip {
+    margin-left: 15px;
+    transform: translateX(0px) translateY(200px); } }
+
+.grabber_buttons--grab.active {
+  transform: translateY(0px) translateX(0px); }
+
+.grabber_buttons--skip.active {
+  transition-delay: 50ms;
+  transform: translateY(0px) translateX(0px); }

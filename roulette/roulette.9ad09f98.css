@@ -1,0 +1,42 @@
+body {
+    padding: 7%;
+    margin: 0;
+    max-width: 400px;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+canvas {
+    width: 100%;
+    padding-top: 5%;
+}
+
+.spinText {
+    font-family: 'SkyText-Regular', 'Sky Text';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #7A7A7A;
+    text-align: center;
+    line-height: 36px;
+}
+
+.spinButton {
+    margin: 0 auto;
+    border-width: 0px;
+    width: 128px;
+    background-color: rgba(233, 0, 82, 1);
+    border-radius: 4px;
+    text-align: center;
+    font-family: 'SkyTextMedium-Regular', 'Sky Text Medium', 'Sky Text';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 400ms ease-in-out;
+}
+
+.spun {
+    background-color: darkgrey;
+}
